@@ -49,5 +49,3 @@ function blockskit_medical_health_block_pattern_categories_filter( $block_patter
 	return $block_pattern_categories;
 }
 add_filter( 'blockskit_base_block_pattern_categories', 'blockskit_medical_health_block_pattern_categories_filter' );
-
-die;
