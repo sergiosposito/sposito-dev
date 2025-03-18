@@ -21,20 +21,12 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
-      - name: Get all branches
-        id: get-branches
+      - name: Merge master into develop
         run: |
-          git fetch --all
-          BRANCHES=$(git branch -r | grep -v 'origin/master' | sed 's/origin\///')
-          echo "branches=$BRANCHES" >> $GITHUB_OUTPUT
-
-      - name: Merge master into all branches
-        run: |
-          for branch in ${{ steps.get-branches.outputs.branches }}; do
-            git checkout $branch
-            git pull origin $branch
-            git merge origin/master --no-edit
-            git push origin $branch
-          done
+          git fetch origin
+          git checkout develop
+          git pull origin develop
+          git merge origin/master --no-edit
+          git push origin develop
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Usa o GITHUB_TOKEN para fazer push
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
