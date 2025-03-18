@@ -1,4 +1,4 @@
-name: Update develop with master
+name: Update branches with master
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  update-develop:
+  update-branches:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,19 +14,27 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}  # Usa o GITHUB_TOKEN padrão
 
       - name: Set up Git
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
-      - name: Merge master into develop
+      - name: Get all branches
+        id: get-branches
         run: |
-          git fetch origin
-          git checkout develop
-          git pull origin develop
-          git merge origin/master --no-edit
-          git push origin develop
+          git fetch --all
+          BRANCHES=$(git branch -r | grep -v 'origin/master' | sed 's/origin\///')
+          echo "branches=$BRANCHES" >> $GITHUB_OUTPUT
+
+      - name: Merge master into all branches
+        run: |
+          for branch in ${{ steps.get-branches.outputs.branches }}; do
+            git checkout $branch
+            git pull origin $branch
+            git merge origin/master --no-edit
+            git push origin $branch
+          done
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Usa o GITHUB_TOKEN para fazer push
