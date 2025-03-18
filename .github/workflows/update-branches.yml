@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          token: ${{ secrets.REPO_TOKEN }}  # Usa o PAT com permissões de escrita
+          token: ${{ secrets.GITHUB_TOKEN }}  # Usa o GITHUB_TOKEN padrão
 
       - name: Set up Git
         run: |
@@ -37,4 +37,4 @@ jobs:
             git push origin $branch
           done
         env:
-          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}  # Usa o PAT para fazer push
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Usa o GITHUB_TOKEN para fazer push
