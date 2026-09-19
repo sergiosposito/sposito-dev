@@ -5,15 +5,25 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>Sérgio Sposito | Software Engineer</title>
+    <title>Sérgio Sposito | Tech Lead</title>
 
     <meta name="description"
           content="Sérgio Sposito — Engenheiro de Software especializado em backend, arquitetura escalável e plataformas de alta performance."/>
 
+    <meta property="og:type" content="profile"/>
     <meta property="og:title" content="Sérgio Sposito | Engenharia de Software"/>
     <meta property="og:description"
           content="Especialista em sistemas distribuídos, backend e plataformas digitais de alta escala."/>
+    <meta property="og:image" content="https://sposito.dev/img/sergio.jpg"/>
+    <meta property="og:url" content="https://sposito.dev/"/>
 
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Sérgio Sposito | Engenharia de Software"/>
+    <meta name="twitter:description"
+          content="Especialista em sistemas distribuídos, backend e plataformas digitais de alta escala."/>
+    <meta name="twitter:image" content="https://sposito.dev/img/sergio.jpg"/>
+
+    <link rel="canonical" href="https://sposito.dev/"/>
     <link rel="icon" href="https://sposito.dev/favicon.ico">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,695 +32,692 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet">
 
     <style>
+        :root {
+            --bg: #ffffff;
+            --tile: #f6f9fc;
+            --tile-hover: #eef5fc;
+            --ink: #101828;
+            --muted: #5b6673;
+            --hairline: rgba(16, 24, 40, .08);
+            --hairline-strong: rgba(16, 24, 40, .14);
+            --gold: #0ea5e9;
+            --gold-dim: rgba(14, 165, 233, .3);
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background: #0f172a;
-            color: #94a3b8;
+            background: var(--bg);
+            color: var(--muted);
         }
 
-        .spotlight {
-            background: radial-gradient(600px circle at var(--x) var(--y),
-            rgba(45, 212, 191, 0.10),
-            transparent 80%);
+        .display {
+            font-family: 'Playfair Display', Georgia, serif;
         }
 
-        .nav-link:hover .nav-link-line,
-        .nav-link-active .nav-link-line {
-            width: 4rem;
-            background-color: #e2e8f0;
-        }
-
-        .nav-link:hover span,
-        .nav-link-active span {
-            color: #e2e8f0;
-        }
-
-        .tech-badge {
-            padding: .35rem .85rem;
-            background: rgba(45, 212, 191, .10);
-            color: #5eead4;
-            font-size: .70rem;
+        .eyebrow {
+            font-size: .66rem;
             font-weight: 600;
+            letter-spacing: .24em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .tile {
+            background: var(--tile);
+            border: 1px solid var(--hairline);
+            border-radius: 1.1rem;
+            transition: all .3s ease;
+        }
+
+        .tile:hover {
+            background: var(--tile-hover);
+            border-color: var(--hairline-strong);
+            transform: translateY(-2px);
+        }
+
+        .hairline-top {
+            border-top: 1px solid var(--hairline);
+        }
+
+        .hairline-b {
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .tag {
+            padding: .3rem .8rem;
+            font-size: .68rem;
+            font-weight: 500;
+            letter-spacing: .03em;
+            color: var(--muted);
+            border: 1px solid var(--hairline-strong);
             border-radius: 9999px;
-            border: 1px solid rgba(94, 234, 212, .08);
+            transition: all .25s ease;
+        }
+
+        .tag:hover {
+            color: var(--gold);
+            border-color: var(--gold-dim);
+        }
+
+        .avatar-ring {
+            box-shadow: 0 0 0 1px var(--gold-dim), 0 0 0 5px var(--bg);
         }
 
         .company-logo {
-            height: 28px;
+            height: 22px;
             width: auto;
             object-fit: contain;
             opacity: .85;
-            filter: brightness(0) invert(1);
+            transition: all .3s ease;
         }
 
-        .experience-card:hover {
-            background: rgba(30, 41, 59, 0.35);
+        .company-logo:hover {
+            opacity: 1;
+            transform: scale(1.04);
+        }
+
+        .product-logo {
+            width: auto;
+            object-fit: contain;
+            opacity: .85;
+            transition: all .3s ease;
+        }
+
+        .product-logo:hover {
+            opacity: 1;
+            transform: scale(1.04);
+        }
+
+        .badge-logo {
+            height: 22px;
+            width: 22px;
+            object-fit: cover;
+            border-radius: .4rem;
+            opacity: .9;
+            transition: all .3s ease;
+        }
+
+        .badge-logo:hover {
+            opacity: 1;
+            transform: scale(1.08);
+        }
+
+        .monogram {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: .8rem;
+            color: var(--muted);
+            border: 1px solid var(--hairline-strong);
+            transition: all .3s ease;
+        }
+
+        .entry:hover .entry-role {
+            color: var(--gold);
+        }
+
+        .entry-role {
+            transition: color .3s ease;
+        }
+
+        .cta-outline {
+            border: 1px solid var(--gold-dim);
+            color: var(--gold);
+            transition: all .3s ease;
+        }
+
+        .cta-outline:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: #ffffff !important;
+        }
+
+        .nav-link-active {
+            color: var(--gold) !important;
+        }
+
+        .bento {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
         }
 
         @media (min-width: 1024px) {
-            .sticky-header {
-                max-height: 100vh;
-                position: sticky;
-                top: 0;
+            .bento {
+                grid-template-columns: repeat(6, 1fr);
+                grid-auto-rows: minmax(9.5rem, auto);
             }
+
+            .t-hero { grid-column: span 3; grid-row: span 3; }
+            .t-now { grid-column: span 3; grid-row: span 2; }
+            .t-stack { grid-column: span 3; grid-row: span 1; }
+            .t-companies { grid-column: span 2; grid-row: span 1; }
+            .t-edu { grid-column: span 2; grid-row: span 1; }
+            .t-stats { grid-column: span 2; grid-row: span 1; }
+            .t-contact { grid-column: span 2; grid-row: span 1; }
+            .t-proj { grid-column: span 2; grid-row: span 1; }
         }
     </style>
 </head>
 
-<body class="selection:bg-teal-300 selection:text-teal-900 leading-relaxed">
-
-<!-- SPOTLIGHT -->
-<div id="spotlight" class="fixed inset-0 pointer-events-none spotlight z-20"></div>
-
-<div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
-
-    <div class="flex flex-col lg:flex-row gap-4 lg:gap-24">
-
-        <!-- SIDEBAR -->
-        <header
-                class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 py-12 z-30">
-
-            <div>
-
-                <a href="/" class="inline-flex items-center">
-                    <img src="https://sposito.dev/logos/logo-sergio.dev.png" alt="sposito.dev"
-                         class="h-12 w-auto opacity-95 hover:opacity-100 transition-all duration-300"/>
-                </a>
-
-                <h2 class="mt-4 text-lg font-medium tracking-tight text-slate-300">
-                    Arquiteto | Engenheiro de Software
-                </h2>
-
-                <p class="mt-6 max-w-md leading-relaxed">
-                    Engenharia backend, plataformas distribuídas,
-                    arquitetura escalável e sistemas de alta disponibilidade.
-                </p>
-
-                <!-- MENU -->
-                <nav class="hidden lg:block mt-16 w-max">
-
-                    <ul class="flex flex-col gap-1">
-
-                        <li>
-                            <a href="#sobre"
-                               class="flex items-center gap-4 py-3 group nav-link nav-link-active">
-                                    <span
-                                            class="h-[1px] w-8 bg-slate-600 transition-all duration-300 nav-link-line"></span>
-                                <span
-                                        class="text-xs font-bold uppercase tracking-widest text-slate-500 transition-all">
-                                        Sobre
-                                    </span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#experiencia" class="flex items-center gap-4 py-3 group nav-link">
-                                    <span
-                                            class="h-[1px] w-8 bg-slate-600 transition-all duration-300 nav-link-line"></span>
-                                <span
-                                        class="text-xs font-bold uppercase tracking-widest text-slate-500 transition-all">
-                                        Experiência
-                                    </span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#stack" class="flex items-center gap-4 py-3 group nav-link">
-                                    <span
-                                            class="h-[1px] w-8 bg-slate-600 transition-all duration-300 nav-link-line"></span>
-                                <span
-                                        class="text-xs font-bold uppercase tracking-widest text-slate-500 transition-all">
-                                        Stack
-                                    </span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#projetos" class="flex items-center gap-4 py-3 group nav-link">
-                                    <span
-                                            class="h-[1px] w-8 bg-slate-600 transition-all duration-300 nav-link-line"></span>
-                                <span
-                                        class="text-xs font-bold uppercase tracking-widest text-slate-500 transition-all">
-                                        Projetos
-                                    </span>
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </nav>
-
-            </div>
-
-            <!-- SOCIAL -->
-            <ul class="ml-1 mt-10 flex flex-col gap-4">
-
-                <li>
-                    <a href="https://github.com/sergiosposito" target="_blank"
-                       class="group flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-slate-200 transition-all">
-
-                        <i data-lucide="github" class="w-5 h-5"></i>
-                        <span>GitHub</span>
-
-                    </a>
-                </li>
-
-                <li>
-                    <a href="https://www.linkedin.com/in/sergio-sposito/" target="_blank"
-                       class="group flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-slate-200 transition-all">
-
-                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                        <span>LinkedIn</span>
-
-                    </a>
-                </li>
-
-                <li>
-                    <a href="mailto:sergio.devweb@gmail.com"
-                       class="group flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-slate-200 transition-all">
-
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                        <span>Email</span>
-
-                    </a>
-                </li>
-
-            </ul>
-
-        </header>
-
-        <!-- CONTENT -->
-        <main class="lg:w-1/2 lg:py-24 py-12 flex flex-col gap-24 md:gap-32 z-30">
-
-            <!-- SOBRE -->
-            <section id="sobre" class="scroll-mt-24 section">
-
-                <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 mb-8">
-                    Sobre
-                </h2>
-
-                <p class="mb-5">
-                    Engenheiro de Software com mais de 10 anos de experiência em backend,
-                    plataformas de alta escala e arquitetura de sistemas distribuídos.
-                </p>
-
-                <p class="mb-5">
-                    Atuação em produtos digitais com milhões de acessos mensais,
-                    focando em escalabilidade, observabilidade, performance
-                    e alta disponibilidade.
-                </p>
-
-                <p class="mb-5">
-                    Experiência sólida com PHP, WordPress VIP, Node.js,
-                    arquitetura orientada a domínio, integrações financeiras
-                    e aplicações em tempo real.
-                </p>
-
-                <p>
-                    Participação em produtos digitais de grande audiência como
-                    CNN Brasil, VEJA, Superinteressante, Quatro Rodas,
-                    Capricho e Guia do Estudante.
-                </p>
-
-            </section>
-
-            <!-- EXPERIÊNCIA -->
-            <section id="experiencia" class="scroll-mt-24 section">
-
-                <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 mb-10">
-                    Experiência
-                </h2>
-
-                <ol class="flex flex-col gap-16 group/list">
-
-                    <!-- CNN -->
-                    <li>
-
-                        <div
-                                class="experience-card rounded-2xl p-6 transition-all duration-300 border border-slate-800">
-
-                            <div class="flex items-center justify-between flex-wrap gap-4">
-
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/CNN.svg"
-                                     alt="CNN Brasil" class="company-logo">
-
-                                <span
-                                        class="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                                        Fev 2021 — Presente
-                                    </span>
-
-                            </div>
-
-                            <h3 class="mt-6 text-lg font-semibold text-slate-100">
-                                Software Engineer · CNN Brasil
-                            </h3>
-
-                            <p class="mt-5 text-sm leading-relaxed">
-                                Participação na construção e evolução dos produtos digitais da CNN Brasil,
-                                desde a implementação inicial da plataforma até a modernização arquitetural
-                                dos sistemas.
-                            </p>
-
-                            <p class="mt-4 text-sm leading-relaxed">
-                                Estruturação da primeira arquitetura WordPress da CNN,
-                                preparada para alto volume de acessos e operação contínua
-                                em ambiente de missão crítica.
-                            </p>
-
-                            <p class="mt-4 text-sm leading-relaxed">
-                                Refatoração de código legado procedural para orientação a objetos,
-                                aplicação de SOLID, Clean Code e melhorias de performance
-                                e escalabilidade.
-                            </p>
-
-                            <!-- PROJETOS -->
-                            <div class="mt-8 border-l border-slate-700 pl-5 space-y-6">
-
-                                <div>
-                                    <h4 class="text-sm font-semibold text-teal-300">
-                                        Sistema de Esportes
-                                    </h4>
-
-                                    <p class="mt-2 text-sm leading-relaxed">
-                                        Plataforma em tempo real para futebol, jogos ao vivo,
-                                        campeonatos e ingestão de dados esportivos.
-                                    </p>
-                                </div>
-
-                                <div>
-                                    <h4 class="text-sm font-semibold text-teal-300">
-                                        Plataforma Eleições
-                                    </h4>
-
-                                    <p class="mt-2 text-sm leading-relaxed">
-                                        Backend escalável para cobertura eleitoral
-                                        com processamento em tempo real.
-                                    </p>
-                                </div>
-
-                                <div>
-                                    <h4 class="text-sm font-semibold text-teal-300">
-                                        CNN Stocks
-                                    </h4>
-
-                                    <p class="mt-2 text-sm leading-relaxed">
-                                        Plataforma financeira baseada em assinatura
-                                        e APIs de mercado.
-                                    </p>
-                                </div>
-
-                                <div>
-                                    <h4 class="text-sm font-semibold text-teal-300">
-                                        CNN Pay
-                                    </h4>
-
-                                    <p class="mt-2 text-sm leading-relaxed">
-                                        Gateway interno de pagamentos com Stripe
-                                        e gestão de assinaturas.
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <ul class="mt-8 flex flex-wrap gap-2">
-                                <li class="tech-badge">PHP</li>
-                                <li class="tech-badge">WordPress VIP</li>
-                                <li class="tech-badge">Node.js</li>
-                                <li class="tech-badge">SOLID</li>
-                                <li class="tech-badge">Clean Architecture</li>
-                                <li class="tech-badge">Stripe</li>
-                                <li class="tech-badge">Real-time</li>
-                                <li class="tech-badge">High Availability</li>
-                            </ul>
-
-                        </div>
-
-                    </li>
-
-                    <!-- ABRIL -->
-                    <li>
-
-                        <div
-                                class="experience-card rounded-2xl p-6 transition-all duration-300 border border-slate-800">
-
-                            <div class="flex items-center justify-between flex-wrap gap-4">
-
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Grupo_Abril_logo.svg"
-                                     alt="Grupo Abril" class="company-logo">
-
-                                <span
-                                        class="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                                        Mar 2020 — Fev 2021
-                                    </span>
-
-                            </div>
-
-                            <h3 class="mt-6 text-lg font-semibold text-slate-100">
-                                Full-stack Developer · Grupo Abril
-                            </h3>
-
-                            <p class="mt-5 text-sm leading-relaxed">
-                                Desenvolvimento e sustentação de plataformas editoriais
-                                de alta audiência utilizando WordPress e PHP.
-                            </p>
-
-                            <div class="mt-6 border-l border-slate-700 pl-5">
-
-                                <h4 class="text-sm font-semibold text-teal-300 mb-4">
-                                    Produtos
-                                </h4>
-
-                                <ul class="space-y-2 text-sm">
-                                    <li>• VEJA</li>
-                                    <li>• Superinteressante</li>
-                                    <li>• Quatro Rodas</li>
-                                    <li>• Capricho</li>
-                                    <li>• Guia do Estudante</li>
-                                </ul>
-
-                            </div>
-
-                            <ul class="mt-8 flex flex-wrap gap-2">
-                                <li class="tech-badge">PHP</li>
-                                <li class="tech-badge">WordPress</li>
-                                <li class="tech-badge">JavaScript</li>
-                                <li class="tech-badge">SEO</li>
-                                <li class="tech-badge">Performance</li>
-                            </ul>
-
-                        </div>
-
-                    </li>
-
-                    <!-- VECTOR -->
-                    <li>
-
-                        <div
-                                class="experience-card rounded-2xl p-6 transition-all duration-300 border border-slate-800">
-
-                            <div class="flex items-center justify-between flex-wrap gap-4">
-
-                                <h3 class="text-lg font-semibold text-slate-100">
-                                    Full-stack Developer · Vector ITC
-                                </h3>
-
-                                <span
-                                        class="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                                        Mai 2019 — Mar 2020
-                                    </span>
-
-                            </div>
-
-                            <p class="mt-5 text-sm leading-relaxed">
-                                Desenvolvimento de APIs, autenticação com AWS Cognito
-                                e automação de testes com Codeception.
-                            </p>
-
-                            <ul class="mt-8 flex flex-wrap gap-2">
-                                <li class="tech-badge">AWS Cognito</li>
-                                <li class="tech-badge">API Development</li>
-                                <li class="tech-badge">Codeception</li>
-                                <li class="tech-badge">PHP</li>
-                            </ul>
-
-                        </div>
-
-                    </li>
-
-                    <!-- HAVOK -->
-                    <li>
-
-                        <div
-                                class="experience-card rounded-2xl p-6 transition-all duration-300 border border-slate-800">
-
-                            <div class="flex items-center justify-between flex-wrap gap-4">
-
-                                <h3 class="text-lg font-semibold text-slate-100">
-                                    Full-stack Developer · Havok School
-                                </h3>
-
-                                <span
-                                        class="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                                        Set 2018 — Abr 2019
-                                    </span>
-
-                            </div>
-
-                            <p class="mt-5 text-sm leading-relaxed">
-                                Desenvolvimento de layouts e sistema escolar,
-                                atuando em frontend e backend.
-                            </p>
-
-                            <ul class="mt-8 flex flex-wrap gap-2">
-                                <li class="tech-badge">PHP</li>
-                                <li class="tech-badge">MVC</li>
-                                <li class="tech-badge">MySQL</li>
-                            </ul>
-
-                        </div>
-
-                    </li>
-
-                    <!-- PROTON -->
-                    <li>
-
-                        <div
-                                class="experience-card rounded-2xl p-6 transition-all duration-300 border border-slate-800">
-
-                            <div class="flex items-center justify-between flex-wrap gap-4">
-
-                                <h3 class="text-lg font-semibold text-slate-100">
-                                    Full-stack Developer · Proton
-                                </h3>
-
-                                <span
-                                        class="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                                        Set 2017 — Set 2018
-                                    </span>
-
-                            </div>
-
-                            <p class="mt-5 text-sm leading-relaxed">
-                                Desenvolvimento de sistemas personalizados em PHP
-                                para diferentes segmentos de negócio.
-                            </p>
-
-                            <ul class="mt-8 flex flex-wrap gap-2">
-                                <li class="tech-badge">Laravel</li>
-                                <li class="tech-badge">PHP</li>
-                                <li class="tech-badge">MVC</li>
-                            </ul>
-
-                        </div>
-
-                    </li>
-
-                    <!-- MASTER12 -->
-                    <li>
-
-                        <div
-                                class="experience-card rounded-2xl p-6 transition-all duration-300 border border-slate-800">
-
-                            <div class="flex items-center justify-between flex-wrap gap-4">
-
-                                <h3 class="text-lg font-semibold text-slate-100">
-                                    Full-stack Developer · Agência Master12
-                                </h3>
-
-                                <span
-                                        class="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                                        Set 2016 — Set 2017
-                                    </span>
-
-                            </div>
-
-                            <p class="mt-5 text-sm leading-relaxed">
-                                Desenvolvimento de layouts em PSD, temas WordPress
-                                e sistemas PHP utilizando MVC e orientação a objetos.
-                            </p>
-
-                            <ul class="mt-8 flex flex-wrap gap-2">
-                                <li class="tech-badge">WordPress</li>
-                                <li class="tech-badge">PHP</li>
-                                <li class="tech-badge">MVC</li>
-                                <li class="tech-badge">MySQL</li>
-                            </ul>
-
-                        </div>
-
-                    </li>
-
-                    <!-- PLANEJAR -->
-                    <li>
-
-                        <div
-                                class="experience-card rounded-2xl p-6 transition-all duration-300 border border-slate-800">
-
-                            <div class="flex items-center justify-between flex-wrap gap-4">
-
-                                <h3 class="text-lg font-semibold text-slate-100">
-                                    Estagiário de Programação · Planejar Brasil
-                                </h3>
-
-                                <span
-                                        class="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                                        Abr 2016 — Ago 2016
-                                    </span>
-
-                            </div>
-
-                            <p class="mt-5 text-sm leading-relaxed">
-                                Suporte técnico, configuração de hospedagem,
-                                domínios, Outlook e desenvolvimento em WordPress.
-                            </p>
-
-                            <ul class="mt-8 flex flex-wrap gap-2">
-                                <li class="tech-badge">WordPress</li>
-                                <li class="tech-badge">Hosting</li>
-                                <li class="tech-badge">Support</li>
-                            </ul>
-
-                        </div>
-
-                    </li>
-
-                </ol>
-
-            </section>
-
-            <!-- STACK -->
-            <section id="stack" class="scroll-mt-24 section">
-
-                <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 mb-10">
-                    Stack Principal
-                </h2>
-
-                <div class="flex flex-wrap gap-3">
-
-                    <span class="tech-badge">PHP</span>
-                    <span class="tech-badge">Node.js</span>
-                    <span class="tech-badge">WordPress VIP</span>
-                    <span class="tech-badge">TypeScript</span>
-                    <span class="tech-badge">Next.js</span>
-                    <span class="tech-badge">AWS</span>
-                    <span class="tech-badge">Redis</span>
-                    <span class="tech-badge">RabbitMQ</span>
-                    <span class="tech-badge">Docker</span>
-                    <span class="tech-badge">CI/CD</span>
-                    <span class="tech-badge">System Design</span>
-                    <span class="tech-badge">DDD</span>
-                    <span class="tech-badge">Clean Architecture</span>
-                    <span class="tech-badge">Observability</span>
-                    <span class="tech-badge">Scalability</span>
-
-                </div>
-
-            </section>
-
-            <!-- PROJETOS -->
-            <section id="projetos" class="scroll-mt-24 section">
-
-                <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 mb-10">
-                    Projetos
-                </h2>
-
-                <div class="grid gap-6">
-
-                    <div class="rounded-2xl border border-slate-800 p-6">
-
-                        <h3 class="text-lg font-semibold text-slate-100">
-                            CNN Esportes
-                        </h3>
-
-                        <p class="mt-4 text-sm leading-relaxed">
-                            Plataforma esportiva em tempo real com ingestão
-                            contínua de dados, jogos ao vivo e campeonatos.
-                        </p>
-
-                    </div>
-
-                    <div class="rounded-2xl border border-slate-800 p-6">
-
-                        <h3 class="text-lg font-semibold text-slate-100">
-                            CNN Elections
-                        </h3>
-
-                        <p class="mt-4 text-sm leading-relaxed">
-                            Plataforma de cobertura eleitoral preparada para
-                            picos extremos de audiência.
-                        </p>
-
-                    </div>
-
-                    <div class="rounded-2xl border border-slate-800 p-6">
-
-                        <h3 class="text-lg font-semibold text-slate-100">
-                            CNN Stocks
-                        </h3>
-
-                        <p class="mt-4 text-sm leading-relaxed">
-                            Plataforma financeira baseada em assinaturas
-                            e APIs de mercado.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-            <!-- FOOTER -->
-            <footer class="pb-20 text-sm text-slate-500">
-
-                <p>
-                    Projetado com foco em arquitetura,
-                    escalabilidade e engenharia de software.
-                </p>
-
-                <div class="mt-8">
-
-                    <a href="https://www.linkedin.com/in/sergio-sposito/" target="_blank"
-                       class="inline-flex items-center gap-2 text-sm font-medium text-teal-300 hover:text-teal-200 transition-colors">
-
-                        Ver perfil completo no LinkedIn
-
-                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-
-                    </a>
-
-                </div>
-
-                <p class="mt-8">
-                    © <span id="year"></span> Sérgio Sposito.
-                </p>
-
-            </footer>
-
-        </main>
+<body class="selection:bg-[#0ea5e9]/20 selection:text-[#0ea5e9] leading-relaxed">
+
+<!-- TOP NAV -->
+<header class="sticky top-0 z-40 backdrop-blur bg-white/85 hairline-b">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+
+        <a href="#inicio" class="display text-lg font-semibold tracking-tight" style="color: var(--ink)">
+            Sérgio Sposito
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8">
+            <a href="#inicio" class="nav-link nav-link-active text-xs font-semibold uppercase tracking-[0.15em] transition-colors" style="color: var(--muted)">Início</a>
+            <a href="#experiencia" class="nav-link text-xs font-semibold uppercase tracking-[0.15em] hover:text-[var(--gold)] transition-colors" style="color: var(--muted)">Experiência</a>
+            <a href="#contato" class="nav-link text-xs font-semibold uppercase tracking-[0.15em] hover:text-[var(--gold)] transition-colors" style="color: var(--muted)">Contato</a>
+        </nav>
+
+        <a href="https://www.linkedin.com/in/sergio-sposito/" target="_blank"
+           class="cta-outline text-xs font-semibold uppercase tracking-[0.1em] px-4 py-2 rounded-full">
+            LinkedIn
+        </a>
 
     </div>
+</header>
+
+<div class="max-w-6xl mx-auto px-6 md:px-10">
+
+    <!-- BENTO GRID -->
+    <section id="inicio" class="scroll-mt-16 py-10 md:py-14">
+
+        <div class="bento">
+
+            <!-- HERO -->
+            <div class="tile t-hero p-8 flex flex-col justify-between">
+                <div>
+                    <img src="img/sergio.jpg" alt="Sérgio Sposito"
+                         class="avatar-ring h-16 w-16 rounded-full object-cover grayscale"/>
+
+                    <h1 class="display mt-6 text-3xl font-semibold tracking-tight" style="color: var(--ink)">
+                        Sérgio Sposito
+                    </h1>
+
+                    <p class="eyebrow mt-3">Tech Lead | Arquitetura de Sistemas e Plataformas</p>
+
+                    <p class="mt-5 text-[15px] leading-relaxed max-w-sm">
+                        Mais de 10 anos construindo e liderando plataformas digitais de
+                        grande escala. Lidero a arquitetura e as decisões técnicas do time,
+                        atuando também na interface entre engenharia e produto.
+                    </p>
+                </div>
+
+                <div class="mt-8 flex items-center gap-6 hairline-top pt-6">
+                    <a href="https://github.com/sergiosposito" target="_blank"
+                       class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] hover:text-[var(--gold)] transition-colors" style="color: var(--muted)">
+                        <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/sergio-sposito/" target="_blank"
+                       class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] hover:text-[var(--gold)] transition-colors" style="color: var(--muted)">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+                    </a>
+                    <a href="mailto:sergio.devweb@gmail.com"
+                       class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] hover:text-[var(--gold)] transition-colors" style="color: var(--muted)">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Email
+                    </a>
+                </div>
+            </div>
+
+            <!-- NOW -->
+            <div class="tile t-now p-7 flex flex-col justify-between">
+                <div>
+                    <p class="eyebrow mb-4">Atualmente</p>
+                    <div class="flex items-center gap-3">
+                        <img src="logos/logo-vibra-digital.png" alt="Vibra Digital" class="badge-logo">
+                    </div>
+                    <h2 class="display mt-4 text-xl font-semibold" style="color: var(--ink)">
+                        Software Engineer
+                    </h2>
+                    <p class="text-sm mt-1">Vibra Digital · desde Jun 2026</p>
+                </div>
+                <p class="mt-5 text-sm leading-relaxed">
+                    Engenharia de produtos digitais remota para o ecossistema
+                    da Vibra Digital, braço de tecnologia do Grupo Bandeirantes.
+                </p>
+            </div>
+
+            <!-- STACK -->
+            <div class="tile t-stack p-7">
+                <p class="eyebrow mb-4">Stack Principal</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag">PHP</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">NestJS</span>
+                    <span class="tag">WordPress VIP</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">Next.js</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">Redis</span>
+                    <span class="tag">RabbitMQ</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">CI/CD</span>
+                    <span class="tag">DDD</span>
+                    <span class="tag">Clean Architecture</span>
+                </div>
+            </div>
+
+            <!-- COMPANIES -->
+            <div class="tile t-companies p-7 flex flex-col justify-between">
+                <p class="eyebrow mb-5">Empresas</p>
+                <div class="flex items-center gap-5">
+                    <img src="logos/logo-vibra-digital.png" alt="Vibra Digital" class="badge-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/CNN.svg" alt="CNN Brasil" class="company-logo">
+                    <img src="logos/logo-editora-abril.svg" alt="Grupo Abril" class="company-logo">
+                </div>
+            </div>
+
+            <!-- EDUCATION -->
+            <div class="tile t-edu p-7 flex flex-col justify-center">
+                <p class="eyebrow mb-3">Formação</p>
+                <p class="text-sm leading-relaxed" style="color: var(--ink)">
+                    Uninove — Universidade Nove de Julho
+                </p>
+            </div>
+
+            <!-- STATS -->
+            <div class="tile t-stats p-7 flex flex-col justify-center">
+                <span class="display text-4xl font-semibold" style="color: var(--gold)">10+</span>
+                <p class="mt-1 text-xs uppercase tracking-[0.12em]" style="color: var(--muted)">
+                    Anos moldando plataformas de alta escala
+                </p>
+            </div>
+
+            <!-- PROJECTS -->
+            <div class="tile t-proj p-7">
+                <p class="eyebrow mb-3">Projeto</p>
+                <h3 class="display text-lg font-semibold" style="color: var(--ink)">CNN Esportes</h3>
+                <p class="mt-2 text-sm leading-relaxed">
+                    Plataforma em tempo real para futebol, jogos ao vivo e campeonatos.
+                </p>
+            </div>
+
+            <div class="tile t-proj p-7">
+                <p class="eyebrow mb-3">Projeto</p>
+                <h3 class="display text-lg font-semibold" style="color: var(--ink)">Eleições</h3>
+                <p class="mt-2 text-sm leading-relaxed">
+                    Cobertura eleitoral preparada para picos extremos de audiência.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EXPERIÊNCIA COMPLETA -->
+    <section id="experiencia" class="scroll-mt-16 py-14 md:py-20">
+
+        <p class="eyebrow mb-2">Trajetória completa</p>
+        <h2 class="display text-2xl font-semibold mb-10" style="color: var(--ink)">Experiência</h2>
+
+        <div class="hairline-top">
+
+            <!-- VIBRA DIGITAL -->
+            <article class="entry hairline-b py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
+
+                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
+                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
+                        Jun 2026 — Presente
+                    </span>
+                    <img src="logos/logo-vibra-digital.png" alt="Vibra Digital" class="badge-logo">
+                </div>
+
+                <div>
+                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
+                        Software Engineer
+                    </h3>
+                    <p class="eyebrow mt-1 mb-5">Vibra Digital · São Paulo, Remoto</p>
+
+                    <p class="text-[15px] leading-relaxed">
+                        Atuação remota no ecossistema digital da Vibra Digital,
+                        braço de tecnologia do Grupo Bandeirantes.
+                    </p>
+
+                    <ul class="mt-6 flex flex-wrap gap-2">
+                        <li class="tag">PHP</li>
+                        <li class="tag">Node.js</li>
+                        <li class="tag">NestJS</li>
+                    </ul>
+                </div>
+
+            </article>
+
+            <!-- CNN -->
+            <article class="entry hairline-b py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
+
+                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
+                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
+                        Fev 2021 — Jun 2026
+                    </span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/CNN.svg"
+                         alt="CNN Brasil" class="company-logo" style="opacity:.85">
+                </div>
+
+                <div>
+                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
+                        Software Engineer
+                    </h3>
+                    <p class="eyebrow mt-1 mb-5">CNN Brasil</p>
+
+                    <p class="text-[15px] leading-relaxed mb-4">
+                        Responsável pela evolução dos produtos digitais da CNN Brasil, desde a
+                        implementação inicial até a modernização da arquitetura da plataforma.
+                        Participei da criação do primeiro site em WordPress, estruturando uma
+                        base técnica robusta e preparada para alto volume de acessos, atuando
+                        desde a definição da arquitetura até a entrega em produção.
+                    </p>
+
+                    <p class="text-[15px] leading-relaxed mb-4">
+                        Conduzi a sustentação e evolução contínua da plataforma em ambiente de
+                        alta escala, com otimizações de performance, identificação de gargalos
+                        e melhorias no tempo de resposta e consumo de recursos.
+                    </p>
+
+                    <p class="text-[15px] leading-relaxed">
+                        Liderei a refatoração de código legado, migrando de uma abordagem
+                        procedural para orientação a objetos, e implementei padrões de
+                        desenvolvimento alinhados a SOLID e Clean Code.
+                    </p>
+
+                    <div class="mt-6 space-y-4">
+
+                        <div>
+                            <span class="text-sm font-semibold" style="color: var(--gold)">Sistema de Esportes</span>
+                            <p class="mt-1 text-sm leading-relaxed">
+                                Plataforma em tempo real para futebol, jogos ao vivo,
+                                campeonatos e ingestão de dados esportivos.
+                            </p>
+                        </div>
+
+                        <div>
+                            <span class="text-sm font-semibold" style="color: var(--gold)">Plataforma Eleições</span>
+                            <p class="mt-1 text-sm leading-relaxed">
+                                Backend escalável para cobertura eleitoral
+                                com processamento em tempo real.
+                            </p>
+                        </div>
+
+                        <div>
+                            <span class="text-sm font-semibold" style="color: var(--gold)">CNN Stocks</span>
+                            <p class="mt-1 text-sm leading-relaxed">
+                                Plataforma financeira baseada em assinatura
+                                e APIs de mercado.
+                            </p>
+                        </div>
+
+                        <div>
+                            <span class="text-sm font-semibold" style="color: var(--gold)">CNN Pay</span>
+                            <p class="mt-1 text-sm leading-relaxed">
+                                Gateway interno de pagamentos com Stripe
+                                e gestão de assinaturas.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <ul class="mt-6 flex flex-wrap gap-2">
+                        <li class="tag">PHP</li>
+                        <li class="tag">WordPress VIP</li>
+                        <li class="tag">Node.js</li>
+                        <li class="tag">SOLID</li>
+                        <li class="tag">Clean Architecture</li>
+                        <li class="tag">Stripe</li>
+                        <li class="tag">Real-time</li>
+                        <li class="tag">High Availability</li>
+                    </ul>
+                </div>
+
+            </article>
+
+            <!-- ABRIL -->
+            <article class="entry hairline-b py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
+
+                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
+                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
+                        Mar 2020 — Fev 2021
+                    </span>
+                    <img src="logos/logo-editora-abril.svg"
+                         alt="Grupo Abril" class="company-logo" style="opacity:.85">
+                </div>
+
+                <div>
+                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
+                        Engenheiro de Software
+                    </h3>
+                    <p class="eyebrow mt-1 mb-5">Grupo Abril</p>
+
+                    <p class="text-[15px] leading-relaxed">
+                        Desenvolvimento e manutenção dos sites VEJA, Superinteressante,
+                        Quatro Rodas, Capricho e Guia do Estudante — portais de grande
+                        audiência com alto volume de acessos. Temas e plugins customizados
+                        em WordPress VIP, equilibrando flexibilidade editorial com robustez
+                        técnica em cenários de alto tráfego.
+                    </p>
+
+                    <div class="mt-6">
+                        <span class="text-sm font-semibold" style="color: var(--muted)">Produtos</span>
+                        <div class="mt-4 flex flex-wrap items-center gap-x-8 gap-y-5">
+                            <img src="logos/logo-veja.svg" alt="VEJA" class="product-logo" style="height: 20px">
+                            <img src="logos/logo-superinteressante.svg" alt="Superinteressante" class="product-logo" style="height: 17px">
+                            <img src="logos/logo-quatro-rodas.svg" alt="Quatro Rodas" class="product-logo" style="height: 17px">
+                            <img src="logos/logo-capricho.svg" alt="Capricho" class="product-logo" style="height: 22px">
+                            <img src="logos/logo-guia-do-estudante.svg" alt="Guia do Estudante" class="product-logo" style="height: 32px">
+                        </div>
+                    </div>
+
+                    <ul class="mt-6 flex flex-wrap gap-2">
+                        <li class="tag">PHP</li>
+                        <li class="tag">WordPress</li>
+                        <li class="tag">JavaScript</li>
+                        <li class="tag">SEO</li>
+                        <li class="tag">Performance</li>
+                    </ul>
+                </div>
+
+            </article>
+
+            <!-- VECTOR -->
+            <article class="entry hairline-b py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
+
+                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
+                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
+                        Mai 2019 — Mar 2020
+                    </span>
+                    <span class="monogram flex items-center justify-center w-9 h-9 rounded-full">VI</span>
+                </div>
+
+                <div>
+                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
+                        Full-stack Developer
+                    </h3>
+                    <p class="eyebrow mt-1 mb-5">Vector ITC</p>
+
+                    <p class="text-[15px] leading-relaxed">
+                        Desenvolvimento de APIs, autenticação com AWS Cognito
+                        e automação de testes com Codeception.
+                    </p>
+
+                    <ul class="mt-6 flex flex-wrap gap-2">
+                        <li class="tag">AWS Cognito</li>
+                        <li class="tag">API Development</li>
+                        <li class="tag">Codeception</li>
+                        <li class="tag">PHP</li>
+                    </ul>
+                </div>
+
+            </article>
+
+            <!-- HAVOK -->
+            <article class="entry hairline-b py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
+
+                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
+                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
+                        Set 2018 — Abr 2019
+                    </span>
+                    <span class="monogram flex items-center justify-center w-9 h-9 rounded-full">HS</span>
+                </div>
+
+                <div>
+                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
+                        Full-stack Developer
+                    </h3>
+                    <p class="eyebrow mt-1 mb-5">Havok School</p>
+
+                    <p class="text-[15px] leading-relaxed">
+                        Desenvolvimento de layouts e sistema escolar,
+                        atuando em frontend e backend.
+                    </p>
+
+                    <ul class="mt-6 flex flex-wrap gap-2">
+                        <li class="tag">PHP</li>
+                        <li class="tag">MVC</li>
+                        <li class="tag">MySQL</li>
+                    </ul>
+                </div>
+
+            </article>
+
+            <!-- PROTON -->
+            <article class="entry hairline-b py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
+
+                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
+                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
+                        Set 2017 — Set 2018
+                    </span>
+                    <span class="monogram flex items-center justify-center w-9 h-9 rounded-full">PT</span>
+                </div>
+
+                <div>
+                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
+                        Full-stack Developer
+                    </h3>
+                    <p class="eyebrow mt-1 mb-5">Proton</p>
+
+                    <p class="text-[15px] leading-relaxed">
+                        Desenvolvimento de sistemas personalizados em PHP
+                        para diferentes segmentos de negócio.
+                    </p>
+
+                    <ul class="mt-6 flex flex-wrap gap-2">
+                        <li class="tag">Laravel</li>
+                        <li class="tag">PHP</li>
+                        <li class="tag">MVC</li>
+                    </ul>
+                </div>
+
+            </article>
+
+            <!-- MASTER12 -->
+            <article class="entry hairline-b py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
+
+                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
+                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
+                        Set 2016 — Set 2017
+                    </span>
+                    <img src="logos/logo-master12.svg" alt="Agência Master12" class="company-logo" style="opacity:.85">
+                </div>
+
+                <div>
+                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
+                        Full-stack Developer
+                    </h3>
+                    <p class="eyebrow mt-1 mb-5">Agência Master12</p>
+
+                    <p class="text-[15px] leading-relaxed">
+                        Desenvolvimento de layouts em PSD, temas WordPress
+                        e sistemas PHP utilizando MVC e orientação a objetos.
+                    </p>
+
+                    <ul class="mt-6 flex flex-wrap gap-2">
+                        <li class="tag">WordPress</li>
+                        <li class="tag">PHP</li>
+                        <li class="tag">MVC</li>
+                        <li class="tag">MySQL</li>
+                    </ul>
+                </div>
+
+            </article>
+
+            <!-- PLANEJAR -->
+            <article class="entry py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
+
+                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
+                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
+                        Abr 2016 — Ago 2016
+                    </span>
+                    <img src="logos/logo-planejar-brasil.png" alt="Planejar Brasil" class="company-logo" style="opacity:.85">
+                </div>
+
+                <div>
+                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
+                        Estagiário de Programação
+                    </h3>
+                    <p class="eyebrow mt-1 mb-5">Planejar Brasil</p>
+
+                    <p class="text-[15px] leading-relaxed">
+                        Suporte técnico, configuração de hospedagem,
+                        domínios, Outlook e desenvolvimento em WordPress.
+                    </p>
+
+                    <ul class="mt-6 flex flex-wrap gap-2">
+                        <li class="tag">WordPress</li>
+                        <li class="tag">Hosting</li>
+                        <li class="tag">Support</li>
+                    </ul>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER / CONTATO -->
+    <footer id="contato" class="scroll-mt-16 hairline-top pt-10 pb-20 text-sm">
+
+        <p class="mt-10 text-xs" style="color: var(--muted)">
+            © <span id="year"></span> Sérgio Sposito.
+        </p>
+
+    </footer>
 
 </div>
 
 <script>
 
     document.addEventListener('DOMContentLoaded', () => {
-        lucide.createIcons();
-    });
-
-    const spotlight = document.getElementById('spotlight');
-
-    document.addEventListener('mousemove', (e) => {
-        spotlight.style.setProperty('--x', `${e.clientX}px`);
-        spotlight.style.setProperty('--y', `${e.clientY}px`);
+        if (window.lucide) window.lucide.createIcons();
     });
 
     document.getElementById('year').textContent =
         new Date().getFullYear();
+
+    // Scrollspy
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const setActive = (id) => {
+        navLinks.forEach((link) => {
+            link.classList.toggle('nav-link-active', link.getAttribute('href') === `#${id}`);
+        });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) setActive(entry.target.id);
+        });
+    }, {rootMargin: '-45% 0px -50% 0px'});
+
+    document.querySelectorAll('section[id], footer[id]').forEach((section) => observer.observe(section));
 
 </script>
 
