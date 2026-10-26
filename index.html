@@ -5,26 +5,21 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>Sérgio Sposito | Tech Lead</title>
+    <title>Sérgio Sposito | Technical Account Manager</title>
 
     <meta name="description"
-          content="Sérgio Sposito — Engenheiro de Software especializado em backend, arquitetura escalável e plataformas de alta performance."/>
+          content="Sérgio Sposito — Engenheiro de software com 10+ anos em plataformas de alta escala (VEJA, CNN Brasil, Quatro Rodas). Ponte entre engenharia, produto e negócio: arquitetura, discovery e entrega fim a fim."/>
 
     <meta property="og:type" content="profile"/>
-    <meta property="og:title" content="Sérgio Sposito | Engenharia de Software"/>
+    <meta property="og:title" content="Sérgio Sposito | Technical Account Manager"/>
     <meta property="og:description"
-          content="Especialista em sistemas distribuídos, backend e plataformas digitais de alta escala."/>
+          content="10+ anos em plataformas digitais de alta escala. Arquitetura, alinhamento com stakeholders e entrega fim a fim."/>
     <meta property="og:image" content="https://sposito.dev/img/sergio.jpg"/>
     <meta property="og:url" content="https://sposito.dev/"/>
 
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Sérgio Sposito | Engenharia de Software"/>
-    <meta name="twitter:description"
-          content="Especialista em sistemas distribuídos, backend e plataformas digitais de alta escala."/>
-    <meta name="twitter:image" content="https://sposito.dev/img/sergio.jpg"/>
-
     <link rel="canonical" href="https://sposito.dev/"/>
-    <link rel="icon" href="https://sposito.dev/favicon.ico">
+    <link rel="icon" type="image/png" href="img/sposito-icone.png">
+    <link rel="apple-touch-icon" href="img/sposito-icone.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.435.0/dist/umd/lucide.min.js"></script>
@@ -32,268 +27,439 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
           rel="stylesheet">
 
     <style>
         :root {
-            --bg: #ffffff;
-            --tile: #f6f9fc;
-            --tile-hover: #eef5fc;
-            --ink: #101828;
-            --muted: #5b6673;
-            --hairline: rgba(16, 24, 40, .08);
-            --hairline-strong: rgba(16, 24, 40, .14);
-            --gold: #0ea5e9;
-            --gold-dim: rgba(14, 165, 233, .3);
+            --paper: #f4f0e8;
+            --paper-2: #ebe5da;
+            --stone: #d8d1c5;
+            --ash: #8a847b;
+            --ink: #2b2723;
+            --text: #5c554d;
+            --wood: #7a5a43;
+            --wood-dark: #5a4030;
+            --wood-soft: rgba(122, 90, 67, .1);
+            --line: rgba(43, 39, 35, .12);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--muted);
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            background: var(--paper);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .display {
-            font-family: 'Playfair Display', Georgia, serif;
+        .serif {
+            font-family: 'Shippori Mincho', Georgia, serif;
+            color: var(--ink);
+            letter-spacing: -.01em;
         }
 
-        .eyebrow {
-            font-size: .66rem;
-            font-weight: 600;
-            letter-spacing: .24em;
+        .label {
+            font-size: .7rem;
+            font-weight: 500;
+            letter-spacing: .28em;
             text-transform: uppercase;
-            color: var(--gold);
+            color: var(--ash);
         }
 
-        .tile {
-            background: var(--tile);
-            border: 1px solid var(--hairline);
-            border-radius: 1.1rem;
-            transition: all .3s ease;
+        .rule {
+            border-top: 1px solid var(--line);
         }
 
-        .tile:hover {
-            background: var(--tile-hover);
-            border-color: var(--hairline-strong);
-            transform: translateY(-2px);
+        .panel {
+            background: var(--paper-2);
+            border-radius: .5rem;
         }
 
-        .hairline-top {
-            border-top: 1px solid var(--hairline);
+        .panel-wood {
+            background: var(--wood-dark);
+            color: #e9dfd2;
+            border-radius: .5rem;
         }
 
-        .hairline-b {
-            border-bottom: 1px solid var(--hairline);
+        .kanji {
+            font-family: 'Shippori Mincho', serif;
+            font-size: .95rem;
+            color: var(--wood);
+            writing-mode: vertical-rl;
+            letter-spacing: .4em;
+        }
+
+        .num {
+            font-family: 'Shippori Mincho', serif;
+            color: var(--wood);
         }
 
         .tag {
             padding: .3rem .8rem;
-            font-size: .68rem;
-            font-weight: 500;
-            letter-spacing: .03em;
-            color: var(--muted);
-            border: 1px solid var(--hairline-strong);
+            font-size: .74rem;
+            color: var(--text);
+            border: 1px solid var(--stone);
             border-radius: 9999px;
-            transition: all .25s ease;
+            transition: all .3s ease;
         }
 
         .tag:hover {
-            color: var(--gold);
-            border-color: var(--gold-dim);
+            border-color: var(--wood);
+            color: var(--wood);
         }
 
-        .avatar-ring {
-            box-shadow: 0 0 0 1px var(--gold-dim), 0 0 0 5px var(--bg);
+        .btn-wood {
+            background: var(--wood);
+            color: #f7f2ea;
+            transition: background .3s ease;
         }
 
-        .company-logo {
-            height: 22px;
-            width: auto;
-            object-fit: contain;
-            opacity: .85;
+        .btn-wood:hover {
+            background: var(--wood-dark);
+        }
+
+        .btn-line {
+            border: 1px solid var(--stone);
+            color: var(--ink);
             transition: all .3s ease;
         }
 
-        .company-logo:hover {
-            opacity: 1;
-            transform: scale(1.04);
+        .btn-line:hover {
+            border-color: var(--wood);
+            color: var(--wood);
         }
 
-        .product-logo {
+        .nav-link {
+            color: var(--ash);
+        }
+
+        .nav-link:hover,
+        .nav-link-active {
+            color: var(--wood) !important;
+        }
+
+        .logo-strip img {
             width: auto;
             object-fit: contain;
-            opacity: .85;
-            transition: all .3s ease;
+            opacity: .55;
+            filter: grayscale(1) sepia(.35);
+            transition: all .4s ease;
         }
 
-        .product-logo:hover {
-            opacity: 1;
-            transform: scale(1.04);
-        }
-
-        .badge-logo {
-            height: 22px;
-            width: 22px;
-            object-fit: cover;
-            border-radius: .4rem;
+        .logo-strip img:hover {
             opacity: .9;
-            transition: all .3s ease;
         }
 
-        .badge-logo:hover {
-            opacity: 1;
-            transform: scale(1.08);
+        .portrait {
+            filter: grayscale(1) sepia(.25) contrast(.95);
         }
 
-        .monogram {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            font-size: .8rem;
-            color: var(--muted);
-            border: 1px solid var(--hairline-strong);
-            transition: all .3s ease;
-        }
-
-        .entry:hover .entry-role {
-            color: var(--gold);
+        .enso {
+            position: absolute;
+            pointer-events: none;
+            color: var(--wood);
+            opacity: .14;
         }
 
         .entry-role {
             transition: color .3s ease;
         }
 
-        .cta-outline {
-            border: 1px solid var(--gold-dim);
-            color: var(--gold);
-            transition: all .3s ease;
+        .entry:hover .entry-role {
+            color: var(--wood);
         }
 
-        .cta-outline:hover {
-            background: var(--gold);
-            border-color: var(--gold);
-            color: #ffffff !important;
+        .dash li {
+            position: relative;
+            padding-left: 1.6rem;
         }
 
-        .nav-link-active {
-            color: var(--gold) !important;
+        .dash li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: .8rem;
+            width: .9rem;
+            height: 1px;
+            background: var(--wood);
         }
 
-        .bento {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
+        .card {
+            background: #faf7f2;
+            border: 1px solid var(--line);
+            border-radius: .5rem;
+            transition: border-color .4s ease;
         }
 
-        @media (min-width: 1024px) {
-            .bento {
-                grid-template-columns: repeat(6, 1fr);
-                grid-auto-rows: minmax(9.5rem, auto);
+        .card:hover {
+            border-color: rgba(122, 90, 67, .4);
+        }
+
+        .icon-chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 9999px;
+            background: var(--wood-soft);
+            color: var(--wood);
+        }
+
+        .monogram {
+            font-family: 'Shippori Mincho', serif;
+            font-size: .72rem;
+            color: var(--text);
+            border: 1px solid var(--stone);
+        }
+
+        .flow-step {
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .flow-step:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                top: 1.25rem;
+                left: calc(2.5rem + .75rem);
+                right: .75rem;
+                height: 1px;
+                background: linear-gradient(90deg, rgba(122, 90, 67, .35), transparent);
             }
+        }
 
-            .t-hero { grid-column: span 3; grid-row: span 3; }
-            .t-now { grid-column: span 3; grid-row: span 2; }
-            .t-stack { grid-column: span 3; grid-row: span 1; }
-            .t-companies { grid-column: span 2; grid-row: span 1; }
-            .t-edu { grid-column: span 2; grid-row: span 1; }
-            .t-stats { grid-column: span 2; grid-row: span 1; }
-            .t-contact { grid-column: span 2; grid-row: span 1; }
-            .t-proj { grid-column: span 2; grid-row: span 1; }
+        .pillar {
+            border-top: 1px solid var(--line);
+            transition: border-color .4s ease;
+        }
+
+        .pillar:hover {
+            border-color: var(--wood);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity .8s ease, transform .8s ease;
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
         }
     </style>
 </head>
 
-<body class="selection:bg-[#0ea5e9]/20 selection:text-[#0ea5e9] leading-relaxed">
+<body class="selection:bg-[#7a5a43]/20 leading-relaxed">
 
-<!-- TOP NAV -->
-<header class="sticky top-0 z-40 backdrop-blur bg-white/85 hairline-b">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+<!-- NAV -->
+<header class="sticky top-0 z-40 backdrop-blur bg-[#f4f0e8]/85 border-b border-[var(--line)]">
+    <div class="max-w-6xl mx-auto px-4 md:px-10 h-16 flex items-center justify-between">
 
-        <a href="#inicio" class="display text-lg font-semibold tracking-tight" style="color: var(--ink)">
-            Sérgio Sposito
+        <a href="#inicio" class="inline-flex items-center">
+            <img src="img/sposito-logo.png" alt="sposito." class="h-8 w-auto"/>
         </a>
 
-        <nav class="hidden md:flex items-center gap-8">
-            <a href="#inicio" class="nav-link nav-link-active text-xs font-semibold uppercase tracking-[0.15em] transition-colors" style="color: var(--muted)">Início</a>
-            <a href="#experiencia" class="nav-link text-xs font-semibold uppercase tracking-[0.15em] hover:text-[var(--gold)] transition-colors" style="color: var(--muted)">Experiência</a>
+        <nav class="hidden md:flex items-center gap-10">
+            <a href="#inicio" class="nav-link nav-link-active text-xs tracking-[0.2em] uppercase transition-colors">Início</a>
+            <a href="#atuacao" class="nav-link text-xs tracking-[0.2em] uppercase transition-colors">Como atuo</a>
+            <a href="#experiencia" class="nav-link text-xs tracking-[0.2em] uppercase transition-colors">Experiência</a>
         </nav>
 
-        <a href="https://www.linkedin.com/in/sergio-sposito/" target="_blank"
-           class="cta-outline text-xs font-semibold uppercase tracking-[0.1em] px-4 py-2 rounded-full">
-            LinkedIn
+        <a href="mailto:sergio.devweb@gmail.com"
+           class="btn-line text-xs tracking-[0.15em] uppercase px-4 py-2 rounded-full">
+            Contato
         </a>
 
     </div>
 </header>
 
-<div class="max-w-6xl mx-auto px-6 md:px-10">
+<main class="max-w-6xl mx-auto px-4 md:px-10">
 
-    <!-- BENTO GRID -->
-    <section id="inicio" class="scroll-mt-16 py-10 md:py-14">
+    <!-- HERO -->
+    <section id="inicio" class="scroll-mt-16 relative pt-16 md:pt-28 pb-16 md:pb-24">
 
-        <div class="bento">
+        <svg class="enso hidden md:block -right-10 top-10 w-[420px] h-[420px]" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+            <path d="M160 52c18 22 22 56 6 84-20 36-68 50-104 30C26 146 16 100 38 66 58 34 102 24 134 40"
+                  stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+        </svg>
 
-            <!-- HERO -->
-            <div class="tile t-hero p-8 flex flex-col justify-between">
-                <div>
-                    <img src="img/sergio.jpg" alt="Sérgio Sposito"
-                         class="avatar-ring h-16 w-16 rounded-full object-cover grayscale"/>
+        <div class="relative grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-10 lg:gap-14 items-start">
 
-                    <h1 class="display mt-6 text-3xl font-semibold tracking-tight" style="color: var(--ink)">
-                        Sérgio Sposito
-                    </h1>
+            <span class="kanji hidden lg:block pt-2">技術 · 信頼</span>
 
-                    <p class="eyebrow mt-3">Tech Lead | Arquitetura de Sistemas e Plataformas</p>
+            <div>
+                <p class="label">Technical Account Manager · Engenharia de Software</p>
 
-                    <p class="mt-5 text-[15px] leading-relaxed max-w-sm">
-                        Mais de 10 anos construindo e liderando plataformas digitais de
-                        grande escala. Lidero a arquitetura e as decisões técnicas do time,
-                        atuando também na interface entre engenharia e produto.
-                    </p>
-                </div>
+                <h1 class="serif mt-8 text-4xl md:text-6xl font-medium leading-[1.15]">
+                    Tecnologia complexa,<br class="hidden md:block">
+                    traduzida em <em class="not-italic" style="color: var(--wood)">resultado</em><br class="hidden md:block">
+                    para o cliente.
+                </h1>
 
-                <div class="mt-8 flex items-center gap-6 hairline-top pt-6">
-                    <a href="https://github.com/sergiosposito" target="_blank"
-                       class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] hover:text-[var(--gold)] transition-colors" style="color: var(--muted)">
-                        <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                <p class="mt-8 max-w-xl text-[15px] md:text-base leading-loose">
+                    Sou Sérgio Sposito, engenheiro de software com mais de 10 anos construindo e evoluindo
+                    plataformas digitais de grande escala e alto tráfego — VEJA, Quatro Rodas, Guia do Estudante,
+                    Superinteressante e CNN Brasil. Hoje atuo como referência técnica e ponte entre engenharia,
+                    produto e negócio.
+                </p>
+
+                <div class="mt-10 flex flex-wrap gap-3">
+                    <a href="mailto:sergio.devweb@gmail.com"
+                       class="btn-wood inline-flex items-center gap-2 text-sm px-6 py-3 rounded-full">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Vamos conversar
                     </a>
-                    <a href="https://www.linkedin.com/in/sergio-sposito/" target="_blank"
-                       class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] hover:text-[var(--gold)] transition-colors" style="color: var(--muted)">
+                    <a href="https://www.linkedin.com/in/sergio-sposito/" target="_blank" rel="noopener"
+                       class="btn-line inline-flex items-center gap-2 text-sm px-6 py-3 rounded-full">
                         <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
                     </a>
-                    <a href="mailto:sergio.devweb@gmail.com"
-                       class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] hover:text-[var(--gold)] transition-colors" style="color: var(--muted)">
-                        <i data-lucide="mail" class="w-4 h-4"></i> Email
+                    <a href="https://github.com/sergiosposito" target="_blank" rel="noopener"
+                       class="btn-line inline-flex items-center gap-2 text-sm px-6 py-3 rounded-full">
+                        <i data-lucide="github" class="w-4 h-4"></i> GitHub
                     </a>
                 </div>
             </div>
 
-            <!-- NOW -->
-            <div class="tile t-now p-7 flex flex-col justify-between">
-                <div>
-                    <p class="eyebrow mb-4">Atualmente</p>
-                    <div class="flex items-center gap-3">
-                        <img src="logos/logo-vibra-digital.png" alt="Vibra Digital" class="badge-logo">
-                    </div>
-                    <h2 class="display mt-4 text-xl font-semibold" style="color: var(--ink)">
-                        Software Engineer
-                    </h2>
-                    <p class="text-sm mt-1">Vibra Digital · desde Jun 2026</p>
-                </div>
-                <p class="mt-5 text-sm leading-relaxed">
-                    Engenharia de produtos digitais remota para o ecossistema
-                    da Vibra Digital, braço de tecnologia do Grupo Bandeirantes.
+            <figure class="hidden lg:block">
+                <img src="img/sergio.jpg" alt="Sérgio Sposito"
+                     class="portrait w-56 h-72 object-cover rounded-[.5rem]"/>
+            </figure>
+
+        </div>
+
+        <!-- NUMBERS -->
+        <dl class="relative grid grid-cols-2 lg:grid-cols-4 mt-20 md:mt-24 rule">
+            <div class="reveal pt-8 pr-6">
+                <dt class="num text-5xl">10+</dt>
+                <dd class="mt-3 text-sm">anos em engenharia de software</dd>
+            </div>
+            <div class="reveal pt-8 pr-6">
+                <dt class="num text-5xl">6</dt>
+                <dd class="mt-3 text-sm">portais de grande audiência atendidos</dd>
+            </div>
+            <div class="reveal pt-8 pr-6">
+                <dt class="num text-5xl">E2E</dt>
+                <dd class="mt-3 text-sm">da concepção à entrega em produção</dd>
+            </div>
+            <div class="reveal pt-8 pr-6">
+                <dt class="num text-5xl">24/7</dt>
+                <dd class="mt-3 text-sm">plataformas críticas e alta disponibilidade</dd>
+            </div>
+        </dl>
+
+    </section>
+
+    <!-- LOGOS -->
+    <section class="panel px-6 md:px-10 py-8 md:py-10">
+        <p class="label mb-7">Plataformas em que atuei</p>
+        <div class="logo-strip flex flex-wrap items-center gap-x-12 gap-y-7">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/CNN.svg" alt="CNN Brasil" style="height: 22px">
+            <img src="logos/logo-veja.svg" alt="VEJA" style="height: 20px">
+            <img src="logos/logo-superinteressante.svg" alt="Superinteressante" style="height: 17px">
+            <img src="logos/logo-quatro-rodas.svg" alt="Quatro Rodas" style="height: 17px">
+            <img src="logos/logo-capricho.svg" alt="Capricho" style="height: 22px">
+            <img src="logos/logo-guia-do-estudante.svg" alt="Guia do Estudante" style="height: 30px">
+            <img src="logos/logo-vibra-digital.png" alt="Vibra Digital" class="rounded" style="height: 26px">
+        </div>
+    </section>
+
+    <!-- COMO ATUO -->
+    <section id="atuacao" class="scroll-mt-16 py-20 md:py-28">
+
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-20">
+
+            <div class="lg:sticky lg:top-28 self-start">
+                <p class="label">一 · Como atuo</p>
+                <h2 class="serif mt-6 text-3xl md:text-4xl font-medium leading-snug">
+                    Profundidade técnica de engenheiro, visão de parceiro do cliente.
+                </h2>
+                <p class="mt-6 text-[15px] leading-loose">
+                    Um bom TAM entende a arquitetura a fundo, antecipa riscos e mantém negócio e engenharia
+                    alinhados. É o que faço há anos em ambientes onde instabilidade não é opção.
                 </p>
             </div>
 
-            <!-- STACK -->
-            <div class="tile t-stack p-7">
-                <p class="eyebrow mb-4">Stack Principal</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-12">
+
+                <div class="pillar pt-6 reveal">
+                    <i data-lucide="compass" class="w-5 h-5" style="color: var(--wood)"></i>
+                    <h3 class="serif text-lg font-medium mt-4">Advisory técnico e arquitetura</h3>
+                    <p class="mt-2 text-sm leading-relaxed">
+                        Lidero a definição de arquitetura e as decisões técnicas do time, sustentando escolhas
+                        orientadas a escalabilidade, resiliência e alta disponibilidade.
+                    </p>
+                </div>
+
+                <div class="pillar pt-6 reveal">
+                    <i data-lucide="handshake" class="w-5 h-5" style="color: var(--wood)"></i>
+                    <h3 class="serif text-lg font-medium mt-4">Ponte entre engenharia, produto e negócio</h3>
+                    <p class="mt-2 text-sm leading-relaxed">
+                        Atuo na interface com produto em discovery, definição de escopo e planejamento, alinhando
+                        prioridades técnicas aos objetivos do negócio.
+                    </p>
+                </div>
+
+                <div class="pillar pt-6 reveal">
+                    <i data-lucide="life-buoy" class="w-5 h-5" style="color: var(--wood)"></i>
+                    <h3 class="serif text-lg font-medium mt-4">Resolução de problemas complexos</h3>
+                    <p class="mt-2 text-sm leading-relaxed">
+                        Referência técnica em incidentes e gargalos: identificação de causa raiz, otimização de
+                        performance e estabilidade em picos extremos de audiência.
+                    </p>
+                </div>
+
+                <div class="pillar pt-6 reveal">
+                    <i data-lucide="shield-check" class="w-5 h-5" style="color: var(--wood)"></i>
+                    <h3 class="serif text-lg font-medium mt-4">Qualidade e padrões de entrega</h3>
+                    <p class="mt-2 text-sm leading-relaxed">
+                        Estabeleço padrões de desenvolvimento (SOLID, Clean Code) e asseguro a qualidade das
+                        entregas, reduzindo risco operacional ao longo do ciclo de vida.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FLOW -->
+        <div class="card mt-20 md:mt-24 p-7 md:p-10">
+            <p class="label mb-8">二 · Acompanhamento de ponta a ponta</p>
+            <ol class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <li class="flow-step">
+                    <span class="icon-chip"><i data-lucide="search" class="w-5 h-5"></i></span>
+                    <p class="serif text-lg mt-4">Discovery</p>
+                    <p class="text-sm mt-1 leading-relaxed">Entender o problema real e o objetivo de negócio.</p>
+                </li>
+                <li class="flow-step">
+                    <span class="icon-chip"><i data-lucide="layers" class="w-5 h-5"></i></span>
+                    <p class="serif text-lg mt-4">Escopo e arquitetura</p>
+                    <p class="text-sm mt-1 leading-relaxed">Definir a solução, riscos e integrações externas.</p>
+                </li>
+                <li class="flow-step">
+                    <span class="icon-chip"><i data-lucide="rocket" class="w-5 h-5"></i></span>
+                    <p class="serif text-lg mt-4">Entrega</p>
+                    <p class="text-sm mt-1 leading-relaxed">Coordenar o time e garantir qualidade em produção.</p>
+                </li>
+                <li class="flow-step">
+                    <span class="icon-chip"><i data-lucide="activity" class="w-5 h-5"></i></span>
+                    <p class="serif text-lg mt-4">Sustentação</p>
+                    <p class="text-sm mt-1 leading-relaxed">Monitorar, otimizar e evoluir com o cliente.</p>
+                </li>
+            </ol>
+        </div>
+
+        <!-- STACK + EDU -->
+        <div class="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-20 mt-20 md:mt-24">
+            <div>
+                <p class="label mb-6">三 · Base técnica</p>
                 <div class="flex flex-wrap gap-2">
                     <span class="tag">PHP</span>
+                    <span class="tag">WordPress VIP</span>
                     <span class="tag">Node.js</span>
                     <span class="tag">NestJS</span>
-                    <span class="tag">WordPress VIP</span>
                     <span class="tag">TypeScript</span>
                     <span class="tag">Next.js</span>
                     <span class="tag">AWS</span>
@@ -301,396 +467,198 @@
                     <span class="tag">RabbitMQ</span>
                     <span class="tag">Docker</span>
                     <span class="tag">CI/CD</span>
+                    <span class="tag">Stripe</span>
+                    <span class="tag">APIs & integrações externas</span>
                     <span class="tag">DDD</span>
                     <span class="tag">Clean Architecture</span>
                 </div>
             </div>
-
-            <!-- COMPANIES -->
-            <div class="tile t-companies p-7 flex flex-col justify-between">
-                <p class="eyebrow mb-5">Empresas</p>
-                <div class="flex items-center gap-5">
-                    <img src="logos/logo-vibra-digital.png" alt="Vibra Digital" class="badge-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/CNN.svg" alt="CNN Brasil" class="company-logo">
-                    <img src="logos/logo-editora-abril.svg" alt="Grupo Abril" class="company-logo">
-                </div>
+            <div>
+                <p class="label mb-6">四 · Formação</p>
+                <p class="serif text-xl">Uninove</p>
+                <p class="text-sm mt-1">Universidade Nove de Julho</p>
             </div>
-
-            <!-- EDUCATION -->
-            <div class="tile t-edu p-7 flex flex-col justify-center">
-                <p class="eyebrow mb-3">Formação</p>
-                <p class="text-sm leading-relaxed" style="color: var(--ink)">
-                    Uninove - Universidade Nove de Julho
-                </p>
-            </div>
-
-            <!-- STATS -->
-            <div class="tile t-stats p-7 flex flex-col justify-center">
-                <span class="display text-4xl font-semibold" style="color: var(--gold)">10+</span>
-                <p class="mt-1 text-xs uppercase tracking-[0.12em]" style="color: var(--muted)">
-                    Anos moldando plataformas de alta escala
-                </p>
-            </div>
-
-            <!-- PROJECTS -->
-            <div class="tile t-proj p-7">
-                <p class="eyebrow mb-3">Projeto</p>
-                <h3 class="display text-lg font-semibold" style="color: var(--ink)">CNN Esportes</h3>
-                <p class="mt-2 text-sm leading-relaxed">
-                    Plataforma em tempo real para futebol, jogos ao vivo e campeonatos.
-                </p>
-            </div>
-
-            <div class="tile t-proj p-7">
-                <p class="eyebrow mb-3">Projeto</p>
-                <h3 class="display text-lg font-semibold" style="color: var(--ink)">Eleições</h3>
-                <p class="mt-2 text-sm leading-relaxed">
-                    Cobertura eleitoral preparada para picos extremos de audiência.
-                </p>
-            </div>
-
         </div>
 
     </section>
 
-    <!-- EXPERIÊNCIA COMPLETA -->
-    <section id="experiencia" class="scroll-mt-16 py-14 md:py-20">
+    <!-- EXPERIÊNCIA -->
+    <section id="experiencia" class="scroll-mt-16 pb-20 md:pb-28">
 
-        <p class="eyebrow mb-2">Trajetória completa</p>
-        <h2 class="display text-2xl font-semibold mb-10" style="color: var(--ink)">Experiência</h2>
+        <p class="label">五 · Trajetória</p>
+        <h2 class="serif mt-6 mb-12 text-3xl md:text-4xl font-medium">Experiência</h2>
 
-        <div class="hairline-top">
+        <div class="space-y-4">
 
-            <!-- VIBRA DIGITAL -->
-            <article class="entry hairline-b py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
-
-                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
-                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
-                        Jun 2026 — Presente
-                    </span>
-                    <img src="logos/logo-vibra-digital.png" alt="Vibra Digital" class="badge-logo">
+            <!-- VIBRA -->
+            <article class="entry card p-7 md:p-10 grid grid-cols-1 md:grid-cols-[170px_1fr] gap-5 md:gap-12">
+                <div class="flex md:flex-col items-center md:items-start gap-4">
+                    <img src="logos/logo-vibra-digital.png" alt="Vibra Digital" class="w-7 h-7 rounded object-cover">
+                    <span class="label whitespace-nowrap">Jun 2026 — Presente</span>
                 </div>
-
                 <div>
-                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
-                        Software Engineer
-                    </h3>
-                    <p class="eyebrow mt-1 mb-5">Vibra Digital · São Paulo, Remoto</p>
-
-                    <p class="text-[15px] leading-relaxed">
-                        Atuação remota no ecossistema digital da Vibra Digital,
-                        braço de tecnologia do Grupo Bandeirantes.
+                    <h3 class="entry-role serif text-2xl font-medium">Software Engineer</h3>
+                    <p class="text-sm mt-1" style="color: var(--wood)">Vibra Digital · Remoto</p>
+                    <p class="mt-5 text-[15px] leading-loose">
+                        Engenharia de produtos digitais para o ecossistema da Vibra Digital, braço de tecnologia
+                        do Grupo Bandeirantes.
                     </p>
-
                     <ul class="mt-6 flex flex-wrap gap-2">
                         <li class="tag">PHP</li>
                         <li class="tag">Node.js</li>
                         <li class="tag">NestJS</li>
                     </ul>
                 </div>
-
             </article>
 
             <!-- CNN -->
-            <article class="entry hairline-b py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
-
-                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
-                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
-                        Fev 2021 — Jun 2026
-                    </span>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/CNN.svg"
-                         alt="CNN Brasil" class="company-logo" style="opacity:.85">
+            <article class="entry card p-7 md:p-10 grid grid-cols-1 md:grid-cols-[170px_1fr] gap-5 md:gap-12">
+                <div class="flex md:flex-col items-center md:items-start gap-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/CNN.svg" alt="CNN Brasil" class="h-5 w-auto opacity-70 grayscale">
+                    <span class="label whitespace-nowrap">Fev 2021 — Jun 2026</span>
                 </div>
-
                 <div>
-                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
-                        Software Engineer
-                    </h3>
-                    <p class="eyebrow mt-1 mb-5">CNN Brasil</p>
+                    <h3 class="entry-role serif text-2xl font-medium">Software Engineer</h3>
+                    <p class="text-sm mt-1" style="color: var(--wood)">CNN Brasil</p>
 
-                    <p class="text-[15px] leading-relaxed mb-4">
-                        Responsável pela evolução dos produtos digitais da CNN Brasil, desde a
-                        implementação inicial até a modernização da arquitetura da plataforma.
-                        Participei da criação do primeiro site em WordPress, estruturando uma
-                        base técnica robusta e preparada para alto volume de acessos, atuando
-                        desde a definição da arquitetura até a entrega em produção.
-                    </p>
+                    <ul class="dash mt-5 space-y-3 text-[15px] leading-relaxed">
+                        <li>Participei da criação do primeiro site da CNN Brasil, da definição de arquitetura à entrega em produção.</li>
+                        <li>Sustentação e evolução da plataforma em alta escala: performance, gargalos, tempo de resposta e consumo de recursos.</li>
+                        <li>Liderei a refatoração de código legado (procedural para OO) e padrões alinhados a SOLID e Clean Code.</li>
+                        <li>Interface com produto e áreas de negócio em iniciativas críticas para receita e audiência.</li>
+                    </ul>
 
-                    <p class="text-[15px] leading-relaxed mb-4">
-                        Conduzi a sustentação e evolução contínua da plataforma em ambiente de
-                        alta escala, com otimizações de performance, identificação de gargalos
-                        e melhorias no tempo de resposta e consumo de recursos.
-                    </p>
-
-                    <p class="text-[15px] leading-relaxed">
-                        Liderei a refatoração de código legado, migrando de uma abordagem
-                        procedural para orientação a objetos, e implementei padrões de
-                        desenvolvimento alinhados a SOLID e Clean Code.
-                    </p>
-
-                    <div class="mt-6 space-y-4">
-
-                        <div>
-                            <span class="text-sm font-semibold" style="color: var(--gold)">Sistema de Esportes</span>
-                            <p class="mt-1 text-sm leading-relaxed">
-                                Plataforma em tempo real para futebol, jogos ao vivo,
-                                campeonatos e ingestão de dados esportivos.
-                            </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
+                        <div class="panel p-5">
+                            <p class="serif font-medium">Sistema de Esportes</p>
+                            <p class="text-sm mt-1">Futebol e jogos ao vivo em tempo real, com ingestão de dados esportivos.</p>
                         </div>
-
-                        <div>
-                            <span class="text-sm font-semibold" style="color: var(--gold)">Plataforma Eleições</span>
-                            <p class="mt-1 text-sm leading-relaxed">
-                                Backend escalável para cobertura eleitoral
-                                com processamento em tempo real.
-                            </p>
+                        <div class="panel p-5">
+                            <p class="serif font-medium">Plataforma Eleições</p>
+                            <p class="text-sm mt-1">Backend escalável preparado para picos extremos de audiência.</p>
                         </div>
-
-                        <div>
-                            <span class="text-sm font-semibold" style="color: var(--gold)">CNN Stocks</span>
-                            <p class="mt-1 text-sm leading-relaxed">
-                                Plataforma financeira baseada em assinatura
-                                e APIs de mercado.
-                            </p>
+                        <div class="panel p-5">
+                            <p class="serif font-medium">CNN Stocks</p>
+                            <p class="text-sm mt-1">Plataforma financeira por assinatura integrada a APIs de mercado.</p>
                         </div>
-
-                        <div>
-                            <span class="text-sm font-semibold" style="color: var(--gold)">CNN Pay</span>
-                            <p class="mt-1 text-sm leading-relaxed">
-                                Gateway interno de pagamentos com Stripe
-                                e gestão de assinaturas.
-                            </p>
+                        <div class="panel p-5">
+                            <p class="serif font-medium">CNN Pay</p>
+                            <p class="text-sm mt-1">Gateway interno de pagamentos com Stripe e gestão de assinaturas.</p>
                         </div>
-
                     </div>
 
                     <ul class="mt-6 flex flex-wrap gap-2">
-                        <li class="tag">PHP</li>
                         <li class="tag">WordPress VIP</li>
+                        <li class="tag">PHP</li>
                         <li class="tag">Node.js</li>
-                        <li class="tag">SOLID</li>
-                        <li class="tag">Clean Architecture</li>
                         <li class="tag">Stripe</li>
                         <li class="tag">Real-time</li>
                         <li class="tag">High Availability</li>
                     </ul>
                 </div>
-
             </article>
 
             <!-- ABRIL -->
-            <article class="entry hairline-b py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
-
-                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
-                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
-                        Mar 2020 — Fev 2021
-                    </span>
-                    <img src="logos/logo-editora-abril.svg"
-                         alt="Grupo Abril" class="company-logo" style="opacity:.85">
+            <article class="entry card p-7 md:p-10 grid grid-cols-1 md:grid-cols-[170px_1fr] gap-5 md:gap-12">
+                <div class="flex md:flex-col items-center md:items-start gap-4">
+                    <img src="logos/logo-editora-abril.svg" alt="Grupo Abril" class="h-5 w-auto opacity-70 grayscale">
+                    <span class="label whitespace-nowrap">Mar 2020 — Fev 2021</span>
                 </div>
-
                 <div>
-                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
-                        Engenheiro de Software
-                    </h3>
-                    <p class="eyebrow mt-1 mb-5">Grupo Abril</p>
-
-                    <p class="text-[15px] leading-relaxed">
-                        Desenvolvimento e manutenção dos sites VEJA, Superinteressante,
-                        Quatro Rodas, Capricho e Guia do Estudante — portais de grande
-                        audiência com alto volume de acessos. Temas e plugins customizados
-                        em WordPress VIP, equilibrando flexibilidade editorial com robustez
-                        técnica em cenários de alto tráfego.
-                    </p>
-
-                    <div class="mt-6">
-                        <span class="text-sm font-semibold" style="color: var(--muted)">Produtos</span>
-                        <div class="mt-4 flex flex-wrap items-center gap-x-8 gap-y-5">
-                            <img src="logos/logo-veja.svg" alt="VEJA" class="product-logo" style="height: 20px">
-                            <img src="logos/logo-superinteressante.svg" alt="Superinteressante" class="product-logo" style="height: 17px">
-                            <img src="logos/logo-quatro-rodas.svg" alt="Quatro Rodas" class="product-logo" style="height: 17px">
-                            <img src="logos/logo-capricho.svg" alt="Capricho" class="product-logo" style="height: 22px">
-                            <img src="logos/logo-guia-do-estudante.svg" alt="Guia do Estudante" class="product-logo" style="height: 32px">
-                        </div>
-                    </div>
-
+                    <h3 class="entry-role serif text-2xl font-medium">Engenheiro de Software</h3>
+                    <p class="text-sm mt-1" style="color: var(--wood)">Grupo Abril</p>
+                    <ul class="dash mt-5 space-y-3 text-[15px] leading-relaxed">
+                        <li>Desenvolvimento e manutenção de VEJA, Superinteressante, Quatro Rodas, Capricho e Guia do Estudante.</li>
+                        <li>Temas e plugins customizados em WordPress VIP para portais de alto tráfego.</li>
+                        <li>Equilíbrio entre flexibilidade para as redações e robustez técnica da plataforma.</li>
+                    </ul>
                     <ul class="mt-6 flex flex-wrap gap-2">
+                        <li class="tag">WordPress VIP</li>
                         <li class="tag">PHP</li>
-                        <li class="tag">WordPress</li>
                         <li class="tag">JavaScript</li>
                         <li class="tag">SEO</li>
                         <li class="tag">Performance</li>
                     </ul>
                 </div>
-
             </article>
 
-            <!-- VECTOR -->
-            <article class="entry hairline-b py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
+            <!-- EARLIER -->
+            <div class="card p-7 md:p-10">
+                <p class="label mb-8">Início de carreira · 2016 — 2020</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
-                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
-                        Mai 2019 — Mar 2020
-                    </span>
-                    <span class="monogram flex items-center justify-center w-9 h-9 rounded-full">VI</span>
+                    <div class="flex gap-4">
+                        <span class="monogram flex-none flex items-center justify-center w-9 h-9 rounded-full">VI</span>
+                        <div>
+                            <p class="serif font-medium">Vector ITC</p>
+                            <p class="label mt-1">Full-stack · 2019 — 2020</p>
+                            <p class="text-sm mt-2">APIs, autenticação com AWS Cognito e testes automatizados com Codeception.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <span class="monogram flex-none flex items-center justify-center w-9 h-9 rounded-full">HS</span>
+                        <div>
+                            <p class="serif font-medium">Havok School</p>
+                            <p class="label mt-1">Full-stack · 2018 — 2019</p>
+                            <p class="text-sm mt-2">Layouts e sistema escolar, do frontend ao backend.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <span class="monogram flex-none flex items-center justify-center w-9 h-9 rounded-full">PT</span>
+                        <div>
+                            <p class="serif font-medium">Proton</p>
+                            <p class="label mt-1">Full-stack · 2017 — 2018</p>
+                            <p class="text-sm mt-2">Sistemas personalizados em PHP/Laravel para diferentes segmentos de negócio.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <img src="logos/logo-master12.svg" alt="Agência Master12" class="flex-none w-9 h-9 object-contain grayscale opacity-70">
+                        <div>
+                            <p class="serif font-medium">Agência Master12</p>
+                            <p class="label mt-1">Full-stack · 2016 — 2017</p>
+                            <p class="text-sm mt-2">Temas WordPress e sistemas PHP com MVC e orientação a objetos para clientes da agência.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <img src="logos/logo-planejar-brasil.png" alt="Planejar Brasil" class="flex-none w-9 h-9 object-contain grayscale opacity-70">
+                        <div>
+                            <p class="serif font-medium">Planejar Brasil</p>
+                            <p class="label mt-1">Estágio · 2016</p>
+                            <p class="text-sm mt-2">Suporte técnico, hospedagem, domínios e WordPress.</p>
+                        </div>
+                    </div>
+
                 </div>
-
-                <div>
-                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
-                        Full-stack Developer
-                    </h3>
-                    <p class="eyebrow mt-1 mb-5">Vector ITC</p>
-
-                    <p class="text-[15px] leading-relaxed">
-                        Desenvolvimento de APIs, autenticação com AWS Cognito
-                        e automação de testes com Codeception.
-                    </p>
-
-                    <ul class="mt-6 flex flex-wrap gap-2">
-                        <li class="tag">AWS Cognito</li>
-                        <li class="tag">API Development</li>
-                        <li class="tag">Codeception</li>
-                        <li class="tag">PHP</li>
-                    </ul>
-                </div>
-
-            </article>
-
-            <!-- HAVOK -->
-            <article class="entry hairline-b py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
-
-                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
-                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
-                        Set 2018 — Abr 2019
-                    </span>
-                    <span class="monogram flex items-center justify-center w-9 h-9 rounded-full">HS</span>
-                </div>
-
-                <div>
-                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
-                        Full-stack Developer
-                    </h3>
-                    <p class="eyebrow mt-1 mb-5">Havok School</p>
-
-                    <p class="text-[15px] leading-relaxed">
-                        Desenvolvimento de layouts e sistema escolar,
-                        atuando em frontend e backend.
-                    </p>
-
-                    <ul class="mt-6 flex flex-wrap gap-2">
-                        <li class="tag">PHP</li>
-                        <li class="tag">MVC</li>
-                        <li class="tag">MySQL</li>
-                    </ul>
-                </div>
-
-            </article>
-
-            <!-- PROTON -->
-            <article class="entry hairline-b py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
-
-                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
-                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
-                        Set 2017 — Set 2018
-                    </span>
-                    <span class="monogram flex items-center justify-center w-9 h-9 rounded-full">PT</span>
-                </div>
-
-                <div>
-                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
-                        Full-stack Developer
-                    </h3>
-                    <p class="eyebrow mt-1 mb-5">Proton</p>
-
-                    <p class="text-[15px] leading-relaxed">
-                        Desenvolvimento de sistemas personalizados em PHP
-                        para diferentes segmentos de negócio.
-                    </p>
-
-                    <ul class="mt-6 flex flex-wrap gap-2">
-                        <li class="tag">Laravel</li>
-                        <li class="tag">PHP</li>
-                        <li class="tag">MVC</li>
-                    </ul>
-                </div>
-
-            </article>
-
-            <!-- MASTER12 -->
-            <article class="entry hairline-b py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
-
-                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
-                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
-                        Set 2016 — Set 2017
-                    </span>
-                    <img src="logos/logo-master12.svg" alt="Agência Master12" class="company-logo" style="opacity:.85">
-                </div>
-
-                <div>
-                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
-                        Full-stack Developer
-                    </h3>
-                    <p class="eyebrow mt-1 mb-5">Agência Master12</p>
-
-                    <p class="text-[15px] leading-relaxed">
-                        Desenvolvimento de layouts em PSD, temas WordPress
-                        e sistemas PHP utilizando MVC e orientação a objetos.
-                    </p>
-
-                    <ul class="mt-6 flex flex-wrap gap-2">
-                        <li class="tag">WordPress</li>
-                        <li class="tag">PHP</li>
-                        <li class="tag">MVC</li>
-                        <li class="tag">MySQL</li>
-                    </ul>
-                </div>
-
-            </article>
-
-            <!-- PLANEJAR -->
-            <article class="entry py-10 grid grid-cols-1 md:grid-cols-[130px_1fr] gap-4 md:gap-10">
-
-                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-4">
-                    <span class="text-xs uppercase tracking-wide whitespace-nowrap" style="color: var(--muted)">
-                        Abr 2016 — Ago 2016
-                    </span>
-                    <img src="logos/logo-planejar-brasil.png" alt="Planejar Brasil" class="company-logo" style="opacity:.85">
-                </div>
-
-                <div>
-                    <h3 class="entry-role display text-xl font-semibold" style="color: var(--ink)">
-                        Estagiário de Programação
-                    </h3>
-                    <p class="eyebrow mt-1 mb-5">Planejar Brasil</p>
-
-                    <p class="text-[15px] leading-relaxed">
-                        Suporte técnico, configuração de hospedagem,
-                        domínios, Outlook e desenvolvimento em WordPress.
-                    </p>
-
-                    <ul class="mt-6 flex flex-wrap gap-2">
-                        <li class="tag">WordPress</li>
-                        <li class="tag">Hosting</li>
-                        <li class="tag">Support</li>
-                    </ul>
-                </div>
-
-            </article>
+            </div>
 
         </div>
 
     </section>
 
-    <!-- FOOTER / CONTATO -->
-    <footer id="contato" class="scroll-mt-16 hairline-top pt-10 pb-20 text-sm">
+    <!-- CLOSING -->
+    <section class="panel px-6 md:px-12 py-14 md:py-20 text-center mb-16">
+        <p class="label">六 · Contato</p>
+        <h2 class="serif mt-6 text-3xl md:text-4xl font-medium">Vamos construir algo duradouro.</h2>
+        <a href="mailto:sergio.devweb@gmail.com"
+           class="btn-wood inline-flex items-center gap-2 text-sm px-6 py-3 rounded-full mt-10">
+            <i data-lucide="mail" class="w-4 h-4"></i> sergio.devweb@gmail.com
+        </a>
+    </section>
 
-        <p class="mt-10 text-xs" style="color: var(--muted)">
-            © <span id="year"></span> Sérgio Sposito.
-        </p>
-
+    <!-- FOOTER -->
+    <footer class="rule py-10 flex flex-col md:flex-row gap-4 md:items-center md:justify-between text-xs">
+        <p>© <span id="year"></span> Sérgio Sposito.</p>
+        <div class="flex gap-8 tracking-[0.15em] uppercase">
+            <a href="https://www.linkedin.com/in/sergio-sposito/" target="_blank" rel="noopener" class="nav-link transition-colors">LinkedIn</a>
+            <a href="https://github.com/sergiosposito" target="_blank" rel="noopener" class="nav-link transition-colors">GitHub</a>
+        </div>
     </footer>
 
-</div>
+</main>
 
 <script>
 
@@ -702,7 +670,7 @@
         new Date().getFullYear();
 
     // Scrollspy
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('header .nav-link');
 
     const setActive = (id) => {
         navLinks.forEach((link) => {
@@ -716,7 +684,19 @@
         });
     }, {rootMargin: '-45% 0px -50% 0px'});
 
-    document.querySelectorAll('section[id], footer[id]').forEach((section) => observer.observe(section));
+    document.querySelectorAll('section[id]').forEach((section) => observer.observe(section));
+
+    // Reveal on scroll
+    const revealer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                revealer.unobserve(entry.target);
+            }
+        });
+    }, {threshold: .15});
+
+    document.querySelectorAll('.reveal').forEach((el) => revealer.observe(el));
 
 </script>
 

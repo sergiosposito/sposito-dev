@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Sérgio Sposito | Technical Account Manager</title>
+
+    <meta name="description"
+          content="Sérgio Sposito — Engenheiro de software com 10+ anos em plataformas de alta escala (VEJA, CNN Brasil, Quatro Rodas). Ponte entre engenharia, produto e negócio: arquitetura, discovery e entrega fim a fim."/>
+
+    <meta property="og:type" content="profile"/>
+    <meta property="og:title" content="Sérgio Sposito | Technical Account Manager"/>
+    <meta property="og:description"
+          content="10+ anos em plataformas digitais de alta escala. Arquitetura, alinhamento com stakeholders e entrega fim a fim."/>
+    <meta property="og:image" content="https://sposito.dev/img/sergio.jpg"/>
+    <meta property="og:url" content="https://sposito.dev/"/>
+
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Sérgio Sposito | Technical Account Manager"/>
+    <meta name="twitter:description"
+          content="10+ anos em plataformas digitais de alta escala. Arquitetura, alinhamento com stakeholders e entrega fim a fim."/>
+    <meta name="twitter:image" content="https://sposito.dev/img/sergio.jpg"/>
+
+    <link rel="canonical" href="https://sposito.dev/"/>
+    <link rel="icon" href="https://sposito.dev/favicon.ico">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.435.0/dist/umd/lucide.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #fbfcfd;
+            --surface: #ffffff;
+            --tile: #f4f7fa;
+            --ink: #0b1220;
+            --muted: #566173;
+            --hairline: rgba(11, 18, 32, .08);
+            --hairline-strong: rgba(11, 18, 32, .14);
+            --accent: #0284c7;
+            --accent-soft: rgba(2, 132, 199, .08);
+            --accent-dim: rgba(2, 132, 199, .28);
+            --dark: #0b1220;
+            --dark-muted: #9aa6b8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--muted);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .display {
+            font-family: 'Inter Tight', 'Inter', sans-serif;
+            letter-spacing: -.02em;
+            color: var(--ink);
+        }
+
+        .eyebrow {
+            font-size: .68rem;
+            font-weight: 600;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--hairline);
+            border-radius: 1.25rem;
+            transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent-dim);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px -16px rgba(11, 18, 32, .18);
+        }
+
+        .card-dark {
+            background: var(--dark);
+            border-radius: 1.25rem;
+            color: var(--dark-muted);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-dark::before {
+            content: '';
+            position: absolute;
+            inset: -40% -20% auto auto;
+            width: 520px;
+            height: 520px;
+            background: radial-gradient(circle, rgba(2, 132, 199, .35), transparent 65%);
+            pointer-events: none;
+        }
+
+        .icon-chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: .75rem;
+            background: var(--accent-soft);
+            color: var(--accent);
+        }
+
+        .tag {
+            padding: .3rem .8rem;
+            font-size: .72rem;
+            font-weight: 500;
+            color: var(--muted);
+            background: var(--tile);
+            border: 1px solid var(--hairline);
+            border-radius: 9999px;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .35rem .85rem;
+            font-size: .72rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            color: #dbe4ef;
+        }
+
+        .dot {
+            width: .45rem;
+            height: .45rem;
+            border-radius: 9999px;
+            background: #22c55e;
+            box-shadow: 0 0 0 4px rgba(34, 197, 94, .18);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            transition: background .25s ease;
+        }
+
+        .btn-primary:hover {
+            background: #0369a1;
+        }
+
+        .btn-ghost {
+            border: 1px solid rgba(255, 255, 255, .18);
+            color: #e6edf5;
+            transition: all .25s ease;
+        }
+
+        .btn-ghost:hover {
+            border-color: rgba(255, 255, 255, .4);
+            background: rgba(255, 255, 255, .06);
+        }
+
+        .cta-outline {
+            border: 1px solid var(--accent-dim);
+            color: var(--accent);
+            transition: all .3s ease;
+        }
+
+        .cta-outline:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff !important;
+        }
+
+        .nav-link-active {
+            color: var(--accent) !important;
+        }
+
+        .logo-strip img {
+            width: auto;
+            object-fit: contain;
+            opacity: .7;
+            filter: grayscale(1);
+            transition: all .3s ease;
+        }
+
+        .logo-strip img:hover {
+            opacity: 1;
+            filter: none;
+        }
+
+        .badge-logo {
+            height: 26px;
+            width: 26px;
+            object-fit: cover;
+            border-radius: .45rem;
+        }
+
+        .company-logo {
+            height: 20px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .monogram {
+            font-family: 'Inter Tight', sans-serif;
+            font-weight: 600;
+            font-size: .72rem;
+            color: var(--muted);
+            border: 1px solid var(--hairline-strong);
+        }
+
+        .timeline {
+            position: relative;
+        }
+
+        .entry-role {
+            transition: color .3s ease;
+        }
+
+        .entry:hover .entry-role {
+            color: var(--accent);
+        }
+
+        .check li {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .check li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: .55rem;
+            width: .55rem;
+            height: .55rem;
+            border-radius: 9999px;
+            border: 2px solid var(--accent);
+        }
+
+        .flow-step {
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .flow-step:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                top: 1.25rem;
+                left: calc(2.5rem + .75rem);
+                right: .75rem;
+                height: 1px;
+                background: linear-gradient(90deg, var(--accent-dim), transparent);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+            .card:hover { transform: none; }
+        }
+    </style>
+</head>
+
+<body class="selection:bg-sky-500/20 selection:text-sky-700 leading-relaxed">
+
+<!-- TOP NAV -->
+<header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-[var(--hairline)]">
+    <div class="max-w-6xl mx-auto px-4 md:px-10 h-16 flex items-center justify-between">
+
+        <a href="#inicio" class="inline-flex items-center">
+            <img src="img/logo-sergio-dev-dark.png" alt="sposito.dev" class="h-6 w-auto"/>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8">
+            <a href="#inicio" class="nav-link nav-link-active text-xs font-semibold uppercase tracking-[0.15em] hover:text-[var(--accent)] transition-colors">Início</a>
+            <a href="#atuacao" class="nav-link text-xs font-semibold uppercase tracking-[0.15em] hover:text-[var(--accent)] transition-colors">Como atuo</a>
+            <a href="#experiencia" class="nav-link text-xs font-semibold uppercase tracking-[0.15em] hover:text-[var(--accent)] transition-colors">Experiência</a>
+        </nav>
+
+        <a href="https://www.linkedin.com/in/sergio-sposito/" target="_blank" rel="noopener"
+           class="cta-outline text-xs font-semibold uppercase tracking-[0.1em] px-4 py-2 rounded-full">
+            LinkedIn
+        </a>
+
+    </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 md:px-10">
+
+    <!-- HERO -->
+    <section id="inicio" class="scroll-mt-16 pt-8 md:pt-12">
+
+        <div class="card-dark p-7 md:p-12">
+            <div class="relative grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-end">
+
+                <div>
+                    <h1 class="mt-8 text-4xl md:text-6xl font-semibold leading-[1.05] tracking-tight text-white"
+                        style="font-family: 'Inter Tight', sans-serif; letter-spacing: -.03em">
+                        Tecnologia complexa,<br class="hidden md:block">
+                        <span class="text-sky-400">traduzida em resultado</span> para o cliente.
+                    </h1>
+
+                    <p class="mt-6 max-w-2xl text-[15px] md:text-base leading-relaxed">
+                        Sou <strong class="text-white font-semibold">Sérgio Sposito</strong>, engenheiro de software com
+                        mais de 10 anos construindo e evoluindo plataformas digitais de grande escala e alto tráfego —
+                        VEJA, Quatro Rodas, Guia do Estudante, Superinteressante e CNN Brasil. Hoje atuo como referência
+                        técnica e ponte entre engenharia, produto e negócio.
+                    </p>
+
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <a href="mailto:sergio.devweb@gmail.com"
+                           class="btn-primary inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-full">
+                            <i data-lucide="mail" class="w-4 h-4"></i> Vamos conversar
+                        </a>
+                        <a href="https://www.linkedin.com/in/sergio-sposito/" target="_blank" rel="noopener"
+                           class="btn-ghost inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-full">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/sergiosposito" target="_blank" rel="noopener"
+                           class="btn-ghost inline-flex items-center gap-2 text-sm font-semibold px-5 py-3 rounded-full">
+                            <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <img src="img/sergio.jpg" alt="Sérgio Sposito"
+                     class="hidden lg:block h-44 w-44 rounded-3xl object-cover grayscale ring-1 ring-white/15"/>
+            </div>
+        </div>
+
+        <!-- KEY NUMBERS -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+            <div class="card p-6 reveal">
+                <span class="display text-4xl font-semibold" style="color: var(--accent)">10+</span>
+                <p class="mt-1 text-xs uppercase tracking-[0.12em]">anos em engenharia de software</p>
+            </div>
+            <div class="card p-6 reveal">
+                <span class="display text-4xl font-semibold" style="color: var(--accent)">6</span>
+                <p class="mt-1 text-xs uppercase tracking-[0.12em]">portais de grande audiência atendidos</p>
+            </div>
+            <div class="card p-6 reveal">
+                <span class="display text-4xl font-semibold" style="color: var(--accent)">E2E</span>
+                <p class="mt-1 text-xs uppercase tracking-[0.12em]">da concepção à entrega em produção</p>
+            </div>
+            <div class="card p-6 reveal">
+                <span class="display text-4xl font-semibold" style="color: var(--accent)">24/7</span>
+                <p class="mt-1 text-xs uppercase tracking-[0.12em]">plataformas críticas e alta disponibilidade</p>
+            </div>
+        </div>
+
+        <!-- LOGO STRIP -->
+        <div class="card p-6 md:p-7 mt-4">
+            <p class="eyebrow mb-5">Plataformas em que atuei</p>
+            <div class="logo-strip flex flex-wrap items-center gap-x-10 gap-y-6">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/CNN.svg" alt="CNN Brasil" style="height: 22px">
+                <img src="logos/logo-veja.svg" alt="VEJA" style="height: 20px">
+                <img src="logos/logo-superinteressante.svg" alt="Superinteressante" style="height: 17px">
+                <img src="logos/logo-quatro-rodas.svg" alt="Quatro Rodas" style="height: 17px">
+                <img src="logos/logo-capricho.svg" alt="Capricho" style="height: 22px">
+                <img src="logos/logo-guia-do-estudante.svg" alt="Guia do Estudante" style="height: 30px">
+                <img src="logos/logo-vibra-digital.png" alt="Vibra Digital" class="rounded-md" style="height: 26px">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- COMO ATUO (TAM) -->
+    <section id="atuacao" class="scroll-mt-16 py-16 md:py-24">
+
+        <div class="max-w-2xl">
+            <p class="eyebrow mb-3">Perfil Technical Account Manager</p>
+            <h2 class="display text-3xl md:text-4xl font-semibold">
+                Profundidade técnica de engenheiro, visão de parceiro do cliente.
+            </h2>
+            <p class="mt-4 text-[15px]">
+                Um bom TAM entende a arquitetura a fundo, antecipa riscos e mantém negócio e engenharia
+                alinhados. É o que faço há anos em ambientes onde instabilidade não é opção.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
+
+            <div class="card p-7 reveal">
+                <span class="icon-chip"><i data-lucide="compass" class="w-5 h-5"></i></span>
+                <h3 class="display text-lg font-semibold mt-5">Advisory técnico e arquitetura</h3>
+                <p class="mt-2 text-sm leading-relaxed">
+                    Lidero a definição de arquitetura e as decisões técnicas do time, sustentando escolhas
+                    orientadas a escalabilidade, resiliência e alta disponibilidade.
+                </p>
+            </div>
+
+            <div class="card p-7 reveal">
+                <span class="icon-chip"><i data-lucide="handshake" class="w-5 h-5"></i></span>
+                <h3 class="display text-lg font-semibold mt-5">Ponte entre engenharia, produto e negócio</h3>
+                <p class="mt-2 text-sm leading-relaxed">
+                    Atuo na interface com produto em discovery, definição de escopo e planejamento, alinhando
+                    prioridades técnicas aos objetivos do negócio.
+                </p>
+            </div>
+
+            <div class="card p-7 reveal">
+                <span class="icon-chip"><i data-lucide="life-buoy" class="w-5 h-5"></i></span>
+                <h3 class="display text-lg font-semibold mt-5">Resolução de problemas complexos</h3>
+                <p class="mt-2 text-sm leading-relaxed">
+                    Referência técnica em incidentes e gargalos: identificação de causa raiz, otimização de
+                    performance e estabilidade em picos extremos de audiência.
+                </p>
+            </div>
+
+            <div class="card p-7 reveal">
+                <span class="icon-chip"><i data-lucide="shield-check" class="w-5 h-5"></i></span>
+                <h3 class="display text-lg font-semibold mt-5">Qualidade e padrões de entrega</h3>
+                <p class="mt-2 text-sm leading-relaxed">
+                    Estabeleço padrões de desenvolvimento (SOLID, Clean Code) e asseguro a qualidade das
+                    entregas, reduzindo risco operacional ao longo do ciclo de vida.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- FLOW -->
+        <div class="card p-7 md:p-9 mt-4">
+            <p class="eyebrow mb-7">Acompanhamento de ponta a ponta</p>
+            <ol class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <li class="flow-step">
+                    <span class="icon-chip"><i data-lucide="search" class="w-5 h-5"></i></span>
+                    <p class="display font-semibold mt-4">Discovery</p>
+                    <p class="text-sm mt-1">Entender o problema real e o objetivo de negócio.</p>
+                </li>
+                <li class="flow-step">
+                    <span class="icon-chip"><i data-lucide="layers" class="w-5 h-5"></i></span>
+                    <p class="display font-semibold mt-4">Escopo e arquitetura</p>
+                    <p class="text-sm mt-1">Definir a solução, riscos e integrações externas.</p>
+                </li>
+                <li class="flow-step">
+                    <span class="icon-chip"><i data-lucide="rocket" class="w-5 h-5"></i></span>
+                    <p class="display font-semibold mt-4">Entrega</p>
+                    <p class="text-sm mt-1">Coordenar o time e garantir qualidade em produção.</p>
+                </li>
+                <li class="flow-step">
+                    <span class="icon-chip"><i data-lucide="activity" class="w-5 h-5"></i></span>
+                    <p class="display font-semibold mt-4">Sustentação</p>
+                    <p class="text-sm mt-1">Monitorar, otimizar e evoluir com o cliente.</p>
+                </li>
+            </ol>
+        </div>
+
+        <!-- STACK -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
+            <div class="card p-7 lg:col-span-2">
+                <p class="eyebrow mb-4">Base técnica</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag">PHP</span>
+                    <span class="tag">WordPress VIP</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">NestJS</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">Next.js</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">Redis</span>
+                    <span class="tag">RabbitMQ</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">CI/CD</span>
+                    <span class="tag">APIs & integrações externas</span>
+                    <span class="tag">DDD</span>
+                    <span class="tag">Clean Architecture</span>
+                </div>
+            </div>
+            <div class="card p-7 flex flex-col justify-between">
+                <p class="eyebrow mb-3">Formação</p>
+                <p class="display text-lg font-semibold">Uninove</p>
+                <p class="text-sm">Universidade Nove de Julho</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section id="experiencia" class="scroll-mt-16 pb-16 md:pb-24">
+
+        <p class="eyebrow mb-3">Trajetória</p>
+        <h2 class="display text-3xl md:text-4xl font-semibold mb-10">Experiência</h2>
+
+        <div class="space-y-4">
+
+            <!-- VIBRA DIGITAL -->
+            <article class="entry card p-7 md:p-9 grid grid-cols-1 md:grid-cols-[150px_1fr] gap-4 md:gap-10">
+                <div class="flex md:flex-col items-center md:items-start gap-4">
+                    <img src="logos/logo-vibra-digital.png" alt="Vibra Digital" class="badge-logo">
+                    <span class="text-xs uppercase tracking-wide whitespace-nowrap">Jun 2026 — Presente</span>
+                </div>
+                <div>
+                    <h3 class="entry-role display text-xl font-semibold">Software Engineer</h3>
+                    <p class="eyebrow mt-1 mb-4">Vibra Digital · Remoto</p>
+                    <p class="text-[15px]">
+                        Engenharia de produtos digitais para o ecossistema da Vibra Digital, braço de tecnologia
+                        do Grupo Bandeirantes.
+                    </p>
+                    <ul class="mt-5 flex flex-wrap gap-2">
+                        <li class="tag">PHP</li>
+                        <li class="tag">Node.js</li>
+                        <li class="tag">NestJS</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- CNN -->
+            <article class="entry card p-7 md:p-9 grid grid-cols-1 md:grid-cols-[150px_1fr] gap-4 md:gap-10">
+                <div class="flex md:flex-col items-center md:items-start gap-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/CNN.svg" alt="CNN Brasil" class="company-logo">
+                    <span class="text-xs uppercase tracking-wide whitespace-nowrap">Fev 2021 — Jun 2026</span>
+                </div>
+                <div>
+                    <h3 class="entry-role display text-xl font-semibold">Software Engineer</h3>
+                    <p class="eyebrow mt-1 mb-4">CNN Brasil</p>
+
+                    <ul class="check space-y-2 text-[15px]">
+                        <li>Participei da criação do primeiro site da CNN Brasil, da definição de arquitetura à entrega em produção.</li>
+                        <li>Sustentação e evolução da plataforma em alta escala: performance, gargalos, tempo de resposta e consumo de recursos.</li>
+                        <li>Liderei a refatoração de código legado (procedural para OO) e padrões alinhados a SOLID e Clean Code.</li>
+                        <li>Interface com produto e áreas de negócio em iniciativas críticas para receita e audiência.</li>
+                    </ul>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                        <div class="rounded-xl p-4" style="background: var(--tile)">
+                            <p class="text-sm font-semibold" style="color: var(--ink)">Sistema de Esportes</p>
+                            <p class="text-sm mt-1">Futebol e jogos ao vivo em tempo real, com ingestão de dados esportivos.</p>
+                        </div>
+                        <div class="rounded-xl p-4" style="background: var(--tile)">
+                            <p class="text-sm font-semibold" style="color: var(--ink)">Plataforma Eleições</p>
+                            <p class="text-sm mt-1">Backend escalável preparado para picos extremos de audiência.</p>
+                        </div>
+                        <div class="rounded-xl p-4" style="background: var(--tile)">
+                            <p class="text-sm font-semibold" style="color: var(--ink)">CNN Stocks</p>
+                            <p class="text-sm mt-1">Plataforma financeira por assinatura integrada a APIs de mercado.</p>
+                        </div>
+                    </div>
+
+                    <ul class="mt-6 flex flex-wrap gap-2">
+                        <li class="tag">WordPress VIP</li>
+                        <li class="tag">PHP</li>
+                        <li class="tag">Node.js</li>
+                        <li class="tag">Real-time</li>
+                        <li class="tag">High Availability</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ABRIL -->
+            <article class="entry card p-7 md:p-9 grid grid-cols-1 md:grid-cols-[150px_1fr] gap-4 md:gap-10">
+                <div class="flex md:flex-col items-center md:items-start gap-4">
+                    <img src="logos/logo-editora-abril.svg" alt="Grupo Abril" class="company-logo">
+                    <span class="text-xs uppercase tracking-wide whitespace-nowrap">Mar 2020 — Fev 2021</span>
+                </div>
+                <div>
+                    <h3 class="entry-role display text-xl font-semibold">Engenheiro de Software</h3>
+                    <p class="eyebrow mt-1 mb-4">Grupo Abril</p>
+                    <ul class="check space-y-2 text-[15px]">
+                        <li>Desenvolvimento e manutenção de VEJA, Superinteressante, Quatro Rodas, Capricho e Guia do Estudante.</li>
+                        <li>Temas e plugins customizados em WordPress VIP para portais de alto tráfego.</li>
+                        <li>Equilíbrio entre flexibilidade para as redações e robustez técnica da plataforma.</li>
+                    </ul>
+                    <ul class="mt-6 flex flex-wrap gap-2">
+                        <li class="tag">WordPress VIP</li>
+                        <li class="tag">PHP</li>
+                        <li class="tag">JavaScript</li>
+                        <li class="tag">SEO</li>
+                        <li class="tag">Performance</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- EARLIER -->
+            <div class="card p-7 md:p-9">
+                <p class="eyebrow mb-6">Início de carreira · 2016 — 2020</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <div class="flex gap-4">
+                        <span class="monogram flex-none flex items-center justify-center w-9 h-9 rounded-full">VI</span>
+                        <div>
+                            <p class="display font-semibold">Vector ITC</p>
+                            <p class="text-xs uppercase tracking-wide mt-0.5">Full-stack · 2019 — 2020</p>
+                            <p class="text-sm mt-2">APIs, autenticação com AWS Cognito e testes automatizados com Codeception.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <span class="monogram flex-none flex items-center justify-center w-9 h-9 rounded-full">HS</span>
+                        <div>
+                            <p class="display font-semibold">Havok School</p>
+                            <p class="text-xs uppercase tracking-wide mt-0.5">Full-stack · 2018 — 2019</p>
+                            <p class="text-sm mt-2">Layouts e sistema escolar, do frontend ao backend.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <span class="monogram flex-none flex items-center justify-center w-9 h-9 rounded-full">PT</span>
+                        <div>
+                            <p class="display font-semibold">Proton</p>
+                            <p class="text-xs uppercase tracking-wide mt-0.5">Full-stack · 2017 — 2018</p>
+                            <p class="text-sm mt-2">Sistemas personalizados em PHP/Laravel para diferentes segmentos de negócio.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <img src="logos/logo-master12.svg" alt="Agência Master12" class="flex-none w-9 h-9 object-contain">
+                        <div>
+                            <p class="display font-semibold">Agência Master12</p>
+                            <p class="text-xs uppercase tracking-wide mt-0.5">Full-stack · 2016 — 2017</p>
+                            <p class="text-sm mt-2">Temas WordPress e sistemas PHP com MVC e orientação a objetos para clientes da agência.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <img src="logos/logo-planejar-brasil.png" alt="Planejar Brasil" class="flex-none w-9 h-9 object-contain">
+                        <div>
+                            <p class="display font-semibold">Planejar Brasil</p>
+                            <p class="text-xs uppercase tracking-wide mt-0.5">Estágio · 2016</p>
+                            <p class="text-sm mt-2">Suporte técnico, hospedagem, domínios e WordPress.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-[var(--hairline)] py-10 flex flex-col md:flex-row gap-4 md:items-center md:justify-between text-xs">
+        <p>© <span id="year"></span> Sérgio Sposito.</p>
+        <div class="flex gap-6">
+            <a href="mailto:sergio.devweb@gmail.com" class="hover:text-[var(--accent)] transition-colors">Email</a>
+            <a href="https://www.linkedin.com/in/sergio-sposito/" target="_blank" rel="noopener" class="hover:text-[var(--accent)] transition-colors">LinkedIn</a>
+            <a href="https://github.com/sergiosposito" target="_blank" rel="noopener" class="hover:text-[var(--accent)] transition-colors">GitHub</a>
+        </div>
+    </footer>
+
+</main>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide) window.lucide.createIcons();
+    });
+
+    document.getElementById('year').textContent =
+        new Date().getFullYear();
+
+    // Scrollspy
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const setActive = (id) => {
+        navLinks.forEach((link) => {
+            link.classList.toggle('nav-link-active', link.getAttribute('href') === `#${id}`);
+        });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) setActive(entry.target.id);
+        });
+    }, {rootMargin: '-45% 0px -50% 0px'});
+
+    document.querySelectorAll('section[id]').forEach((section) => observer.observe(section));
+
+    // Reveal on scroll
+    const revealer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                revealer.unobserve(entry.target);
+            }
+        });
+    }, {threshold: .15});
+
+    document.querySelectorAll('.reveal').forEach((el) => revealer.observe(el));
+
+</script>
+
+</body>
+
+</html>
